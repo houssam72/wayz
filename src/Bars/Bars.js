@@ -83,7 +83,7 @@ closeNav(){
                     </ul>
 
                 </div>
-                <span style={{width:'0',cursor:'pointer'}} onClick={()=>this.closeNav()} >&#9776;</span>
+                <span style={{cursor:'pointer'}} onClick={()=>this.closeNav()} >&#9776;</span>
             </div>
 
             <div id="mySidenav" class="sidenav" style={{width :'350px',marginTop :"60px"}} >
