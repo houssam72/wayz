@@ -40,6 +40,10 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "@babel/plugin-syntax-jsx": "^7.12.13",
+    "@babel/preset-env": "^7.13.4",
+    "@babel/preset-react": "^7.13.4",
     "three": "^0.127.0"
   }
 }

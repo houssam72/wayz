@@ -7,6 +7,7 @@ import Navigation from './Navigation/navigation';
 import Logo from './logo/logo';
 import Signin from './Signin/Signin';
 import Register from './Register/Register';
+import Bars from './Bars/Bars';
 
 
 class App extends Component {
@@ -20,7 +21,8 @@ constructor(){
     
   }
 }
-onRouteChange=(route)=>{
+
+onRouteChange=(route) =>{
  if(route==="home"){
     this.setState({isSignedIn:true})
   } else {
