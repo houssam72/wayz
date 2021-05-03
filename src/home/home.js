@@ -5,7 +5,7 @@ const Home=({onRouteChange})=>{
 	return(
      <div  className='tc  '>
 
-     <h2 className='mt7'> <span>W</span>elcome to <span>Wa</span>yz</h2>
+     <h2 className='h2 mt7'> <span>W</span>elcome to <span>Wa</span>yz</h2>
      <input 
 
             onClick={()=>onRouteChange('signin')}

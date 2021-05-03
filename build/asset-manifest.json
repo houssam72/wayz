@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/wayz/static/css/main.61e44586.chunk.css",
-    "main.js": "/wayz/static/js/main.c05096ba.chunk.js",
-    "main.js.map": "/wayz/static/js/main.c05096ba.chunk.js.map",
-    "runtime-main.js": "/wayz/static/js/runtime-main.e29f66ee.js",
-    "runtime-main.js.map": "/wayz/static/js/runtime-main.e29f66ee.js.map",
-    "static/css/2.6fd5c3ea.chunk.css": "/wayz/static/css/2.6fd5c3ea.chunk.css",
-    "static/js/2.1cb0d840.chunk.js": "/wayz/static/js/2.1cb0d840.chunk.js",
-    "static/js/2.1cb0d840.chunk.js.map": "/wayz/static/js/2.1cb0d840.chunk.js.map",
-    "index.html": "/wayz/index.html",
-    "static/css/2.6fd5c3ea.chunk.css.map": "/wayz/static/css/2.6fd5c3ea.chunk.css.map",
-    "static/css/main.61e44586.chunk.css.map": "/wayz/static/css/main.61e44586.chunk.css.map",
-    "static/js/2.1cb0d840.chunk.js.LICENSE.txt": "/wayz/static/js/2.1cb0d840.chunk.js.LICENSE.txt",
-    "static/media/2121.5952c4d8.jpg": "/wayz/static/media/2121.5952c4d8.jpg",
-    "static/media/wayz.4b40602d.png": "/wayz/static/media/wayz.4b40602d.png"
+    "main.css": "/static/css/main.61e44586.chunk.css",
+    "main.js": "/static/js/main.546a576b.chunk.js",
+    "main.js.map": "/static/js/main.546a576b.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.59af1c5f.js",
+    "runtime-main.js.map": "/static/js/runtime-main.59af1c5f.js.map",
+    "static/css/2.6fd5c3ea.chunk.css": "/static/css/2.6fd5c3ea.chunk.css",
+    "static/js/2.a5cb1f2d.chunk.js": "/static/js/2.a5cb1f2d.chunk.js",
+    "static/js/2.a5cb1f2d.chunk.js.map": "/static/js/2.a5cb1f2d.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.6fd5c3ea.chunk.css.map": "/static/css/2.6fd5c3ea.chunk.css.map",
+    "static/css/main.61e44586.chunk.css.map": "/static/css/main.61e44586.chunk.css.map",
+    "static/js/2.a5cb1f2d.chunk.js.LICENSE.txt": "/static/js/2.a5cb1f2d.chunk.js.LICENSE.txt",
+    "static/media/2121.5952c4d8.jpg": "/static/media/2121.5952c4d8.jpg",
+    "static/media/wayz.4b40602d.png": "/static/media/wayz.4b40602d.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.e29f66ee.js",
+    "static/js/runtime-main.59af1c5f.js",
     "static/css/2.6fd5c3ea.chunk.css",
-    "static/js/2.1cb0d840.chunk.js",
+    "static/js/2.a5cb1f2d.chunk.js",
     "static/css/main.61e44586.chunk.css",
-    "static/js/main.c05096ba.chunk.js"
+    "static/js/main.546a576b.chunk.js"
   ]
 }

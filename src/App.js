@@ -8,7 +8,7 @@ import Logo from './logo/logo';
 import Signin from './Signin/Signin';
 import Register from './Register/Register';
 import Bars from './Bars/Bars';
-
+import Search from './search/Search';
 
 class App extends Component {
 
@@ -48,7 +48,7 @@ onRouteChange=(route) =>{
     { this.state.route==='signin'
       ? <Signin onRouteChange={this.onRouteChange}/>
       : (this.state.route==='home'
-         ?<div></div>
+         ?<Search/>
          :<Register onRouteChange={this.onRouteChange}/>
 )
     }
