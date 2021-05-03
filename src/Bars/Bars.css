@@ -16,13 +16,14 @@ body {
 	overflow-x: hidden;
 	transition: 0.5s;
 	padding-top: 60px;
-	background: rgba(255,255,255,0.5);
+	background: rgba(255,255,255,0.7);
+	border-radius: 14px 0 0 0	;
 }
 
 .sidenav a {
 	padding: 8px 8px 8px 32px;
 	text-decoration: none;
-	font-size: 25px;
+	font-size: 14px;
 	color: black;
 	display: block;
 	transition: 0.3s;
@@ -52,7 +53,7 @@ body {
 	.sidenav a {font-size: 18px;}
 }
 .dropbtn {
-	color: #505978;
+	color: white;
 	padding: 16px;
 	font-size: 30px;
 	border: none;

@@ -5,14 +5,13 @@
 }
 
 #rt{
-	margin-top: 188px;
-   background: linear-gradient(89deg,#43cea2 0%,#185a9d 100%);
+	margin-top: 220px;
+    background: linear-gradient(89deg,#43cea2 0%,#185a9d 100%);
 
 }
 
 
 h2{
-	
 	
 	font-size: 3em;
 	font-weight: 800;
@@ -25,7 +24,8 @@ h2{
 
 h2 span{
 
-	color: #ff022c;
+	color: #43cea2;
+	text-shadow: 2px 2px 10px black;
 }
 
 .pizza {
