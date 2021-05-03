@@ -1,0 +1,38 @@
+.d{
+	margin-top: 25%;
+}
+
+.grid-container{
+    display: grid;
+    
+    grid-gap: 10px;
+    
+    grid-template-areas: 
+      "a b d d  "
+      ". . d d"
+      "c e d d ";
+      
+
+}
+
+.a{
+    grid-area: a;
+}
+.b{
+    grid-area: b;
+}
+.c{
+    grid-area: c;
+}
+.d{
+    grid-area: d;
+}
+.e{
+    grid-area: e;
+}
+.bt{
+	background: linear-gradient(89deg,#8E0E00 0%,#1F1C18 100%);
+}
+.bl{
+	background: linear-gradient(89deg,#000000 ,#434343 );
+}

@@ -5,7 +5,14 @@ const Cardlist=({robots})=>{
 		return <Card key={i} 
 		id={robots[i].id} 
 		name={robots[i].name} 
-		email={robots[i].email}/>
+		email={robots[i].email}
+		number={robots[i].number}
+		depart={robots[i].depart} 
+		arrive={robots[i].arrive}
+		prix={robots[i].prix}
+		date={robots[i].date}
+		hd={robots[i].heureDepart}
+		ha={robots[i].heureArrivee}/>
 	})
 	return (
 		<div>

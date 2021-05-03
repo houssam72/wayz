@@ -1,8 +1,7 @@
 import React,{Component} from 'react';
 import Cardlist from './Cardlist';
 import Searchbox from './Searchbox';
-import Scroll from './Scroll';
-
+import {robots} from './robots';
  
 
 class Search extends Component{
@@ -17,9 +16,7 @@ class Search extends Component{
   }
 
   componentDidMount(){
-  	fetch('https://jsonplaceholder.typicode.com/users')
-  .then(response => response.json())
-  .then(users => this.setState({robots:users}))
+  this.setState({robots:robots})
   	
   }
   
