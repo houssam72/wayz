@@ -90,7 +90,8 @@ closeNav(){
             <div id="mySidenav" class="sidenav" style={{width :'330px',marginTop :"60px"}} >
                 <a href='#' class="closebtn" onClick={()=>this.closeNav()}  >&times;</a>
                 <a href='#'>Home</a>
-                <a href='#'>Creer un covoiturage</a>
+                <a href='#'>Créer un covoiturage</a>
+                <a href='#'>Enregistré</a>
                 <a href='#'>Mes Messages</a>
                 <a href='#'>Contact</a>
                 <div class="navbar_right">

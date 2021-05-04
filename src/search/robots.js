@@ -1,4 +1,4 @@
-export const robots = [
+export const users = [
   {
     id: 1,
     name: 'Leanne Graham',
@@ -7,7 +7,7 @@ export const robots = [
     number:'0614363807',
     depart:'casablanca',
     arrive:'mohammedia',
-    prix:'200', date:'03/05/2021',
+    prix:'200', date:'03/06/2021',
     heureDepart:'10:15',
     heureArrivee:'12:20'
   },
@@ -19,7 +19,8 @@ export const robots = [
     number:'0614363807',
     depart:'meknes',
     arrive:'fes',
-    prix:'400', date:'03/05/2021',
+    prix:'400',
+    date:'03/07/2021',
     heureDepart:'10:15',
     heureArrivee:'12:20'
   },
@@ -30,9 +31,9 @@ export const robots = [
     email: 'Nathan@yesenia.net',
     number:'0614363807',
     depart:'casablanca',
-    arrive:'mohammedia',
+    arrive:'fes',
     prix:'200',
-    date:'03/05/2021',
+    date:'03/08/2021',
     heureDepart:'10:15',
     heureArrivee:'12:20'
   },
@@ -45,7 +46,7 @@ export const robots = [
     depart:'meknes',
     arrive:'fes',
     prix:'400',
-    date:'03/05/2021',
+    date:'03/06/2021',
     heureDepart:'10:15',
     heureArrivee:'12:20'
   },
@@ -58,7 +59,7 @@ export const robots = [
     depart:'casablanca',
     arrive:'mohammedia',
     prix:'200',
-    date:'03/05/2021',
+    date:'03/06/2021',
     heureDepart:'10:15',
     heureArrivee:'12:20'
   },
@@ -71,7 +72,7 @@ export const robots = [
     depart:'casablanca',
     arrive:'mohammedia',
     prix:'200',
-    date:'03/05/2021',
+    date:'03/10/2021',
     heureDepart:'10:15',
     heureArrivee:'12:20'
   },
@@ -84,7 +85,7 @@ export const robots = [
     depart:'meknes',
     arrive:'fes',
     prix:'400',
-    date:'03/05/2021',
+    date:'03/11/2021',
      heureDepart:'10:15',
     heureArrivee:'12:20'
   },
@@ -97,7 +98,7 @@ export const robots = [
     depart:'casablanca',
     arrive:'mohammedia',
     prix:'200',
-    date:'03/05/2021',
+    date:'03/12/2021',
     heureDepart:'10:15',
     heureArrivee:'12:20'
   },
@@ -110,7 +111,7 @@ export const robots = [
     depart:'meknes',
     arrive:'fes',
     prix:'400',
-    date:'03/05/2021',
+    date:'03/13/2021',
     heureDepart:'10:15',
     heureArrivee:'12:20'
   },
@@ -123,7 +124,7 @@ export const robots = [
     depart:'casablanca',
     arrive:'mohammedia',
     prix:'200',
-    date:'03/05/2021',
+    date:'03/14/2021',
     heureDepart:'10:15',
     heureArrivee:'12:20'
   }
