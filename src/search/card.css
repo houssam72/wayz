@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+
+body {
+  font-family: "Lato", sans-serif;
+} 
+
 .d{
 	margin-top: 25%;
 }
@@ -8,7 +15,7 @@
     grid-gap: 10px;
     
     grid-template-areas: 
-      "a b d d  "
+      "a z d d  "
       ". . d d"
       "c e d d ";
       
@@ -18,8 +25,8 @@
 .a{
     grid-area: a;
 }
-.b{
-    grid-area: b;
+.z{
+    grid-area: z;
 }
 .c{
     grid-area: c;
@@ -35,4 +42,23 @@
 }
 .bl{
 	background: linear-gradient(89deg,#000000 ,#434343 );
+}
+
+.w-25 .img_user{
+  border: solid white;
+  background-color: white;
+  border-radius: 50%;
+  border-width: 3px;
+}
+
+
+div .img_user{
+  border: solid white;
+  background-color: white;
+  border-radius: 50%;
+  border-width: 2px;
+}
+.test{
+ 
+
 }
