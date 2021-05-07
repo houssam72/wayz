@@ -23,7 +23,7 @@ constructor(){
 }
 
 onRouteChange=(route) =>{
- if(route==="home"){
+ if(route==="home" || route==="payee"){
     this.setState({isSignedIn:true})
   } else {
     this.setState({isSignedIn:false})
@@ -47,8 +47,8 @@ onRouteChange=(route) =>{
     <Logo/>
     { this.state.route==='signin'
       ? <Signin onRouteChange={this.onRouteChange}/>
-      : (this.state.route==='home'
-         ?<Search/>
+      : (this.state.route==='home' || this.state.route==='payee'
+         ?<Search route={this.state.route} />
          :<Register onRouteChange={this.onRouteChange}/>
 )
     }

@@ -1,6 +1,6 @@
 import React from 'react';
 import './card.css';
-const Card =({name,email,id,number,depart,arrive,prix,date,hd,ha})=>{
+const Card =({name,email,id,number,depart,arrive,prix,date,hd,ha,onPayment})=>{
 	
   return (
    <div className='pa2 center bg-light-green br3 ma2 grow  shadow-5' style={{width:'65%'}}> 
@@ -63,7 +63,8 @@ const Card =({name,email,id,number,depart,arrive,prix,date,hd,ha})=>{
              <input 
             className="bl br4 ph3 pv1  ba white ml3  grow pointer " 
             type="submit" 
-            value="Enregistrer"
+            value="Payee"
+            onClick={()=>onPayment({id})}
              />
       </div>
   </div>
