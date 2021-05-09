@@ -40,15 +40,15 @@ closeNav(){
   <div>
        {this.state.brktebutton===false
         ?
-            <div class="navbar navbar1">
-                <div class="navbar_left">
+            <div className="navbar navbar1">
+                <div className="navbar_left">
                     
-                    <ul  class="menu">
-                        <li class="li_img"><img src={img} alt="PDP" width="100%" class="img_pers" /></li>
+                    <ul  className="menu">
+                        <li className="li_img"><img src={img} alt="PDP" width="100%" className="img_pers" /></li>
                         <li>
-                            <div class="dropdown">
-                              <button class="dropbtn white"> ▾ </button>
-                                  <div class="dropdown-content">
+                            <div className="dropdown">
+                              <button className="dropbtn white"> ▾ </button>
+                                  <div className="dropdown-content">
                                     <a href="#">Link 1</a>
                                     <a href="#">Link 2</a>
                                     <a href="#">Link 3</a>
@@ -59,21 +59,21 @@ closeNav(){
                     </ul>
 
                 </div>
-                <span  style={{cursor:'pointer'}} onClick={()=>this.openNav()} class="white" >&#9776;</span>
+                <span  style={{cursor:'pointer'}} onClick={()=>this.openNav()} className="white" >&#9776;</span>
             </div>
         
 
 :
 <div>
-  <div class="navbar navbar1">
-                <div class="navbar_left">
+  <div className="navbar navbar1">
+                <div className="navbar_left">
                     
-                    <ul  class="menu">
-                          <li class="li_img"><img src={img} alt="PDP" width="100%" class="img_pers" /></li>
+                    <ul  className="menu">
+                          <li className="li_img"><img src={img} alt="PDP" width="100%" className="img_pers" /></li>
                         <li>
-                            <div class="dropdown">
-                              <button class="dropbtn white"> ▾ </button>
-                                  <div class="dropdown-content">
+                            <div className="dropdown">
+                              <button className="dropbtn white"> ▾ </button>
+                                  <div className="dropdown-content">
                                     <a href="#">Link 1</a>
                                     <a href="#">Link 2</a>
                                     <a href="#">Link 3</a>
@@ -84,17 +84,18 @@ closeNav(){
                     </ul>
 
                 </div>
-                <span style={{cursor:'pointer'}} onClick={()=>this.closeNav()} class="white">&#9776;</span>
+                <span style={{cursor:'pointer'}} onClick={()=>this.closeNav()} className="white">&#9776;</span>
             </div>
 
-            <div id="mySidenav" class="sidenav" style={{width :'330px',marginTop :"60px"}} >
-                <a href='#' class="closebtn" onClick={()=>this.closeNav()}  >&times;</a>
+            <div id="mySidenav" className="sidenav" style={{width :'330px',marginTop :"60px"}} >
+                <a href='#' className="closebtn" onClick={()=>this.closeNav()}  >&times;</a>
                 <a href='#' onClick={()=>this.props.onRouteChange('home')}>Home</a>
                 <a href='#'>Créer un covoiturage</a>
+                <a href='#' onClick={()=>this.props.onRouteChange('map')}>Map</a>
                 <a href='#' onClick={()=>this.props.onRouteChange('payee')}>Covoiturages payees </a>
                 <a href='#'>Mes Messages</a>
                 <a href='#'>Contact</a>
-                <div class="navbar_right">
+                <div className="navbar_right">
                     <ul>
                         <li><a href='#' onClick={()=>this.props.onRouteChange('homep')}>Sign Out</a> </li>
                     </ul>
