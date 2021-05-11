@@ -21,7 +21,7 @@ return(
    <nav style={{display:'flex',justifyContent:'flex-end'}}>
      <p  onClick={()=>onRouteChange('signin')}
          className='f5 white link dim black  pa3 pointer'> Sign In</p>
-     <p  onClick={()=>onRouteChange('register')}
+     <p  onClick={()=>onRouteChange('registrer')}
          className='f5 white link dim black  pa3 pointer'> Register</p>    
      
    </nav>  

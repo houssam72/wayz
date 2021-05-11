@@ -9,6 +9,7 @@ import Signin from './Signin/Signin';
 import Register from './Register/Register';
 import Bars from './Bars/Bars';
 import Search from './search/Search';
+import LocationSearchModal from './Map/Map';
 
 class App extends Component {
 
@@ -23,10 +24,10 @@ constructor(){
 }
 
 onRouteChange=(route) =>{
- if(route==="home"){
-    this.setState({isSignedIn:true})
-  } else {
+ if(route==="signin" || route==="registrer"){
     this.setState({isSignedIn:false})
+  } else {
+    this.setState({isSignedIn:true})
   }
   this.setState({route:route})
 }
@@ -47,16 +48,23 @@ onRouteChange=(route) =>{
     <Logo/>
     { this.state.route==='signin'
       ? <Signin onRouteChange={this.onRouteChange}/>
-      : (this.state.route==='home'
-         ?<Search/>
-         :<Register onRouteChange={this.onRouteChange}/>
+      : (this.state.route==='home' || this.state.route==='payee'
+         ?<Search route={this.state.route} />
+         :(this.state.route==='map'
+         ?<LocationSearchModal/>
+         :(this.state.route==='registrer'
+         ?<Register onRouteChange={this.onRouteChange}/>
+         :<div></div>))
 )
     }
+
+
     </div>
 
    
   }
-    </div>
+/*  {/*<LocationSearchModal/>*/}
+*/    </div>
   
   );
 }
