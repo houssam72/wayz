@@ -1,17 +1,20 @@
 import React from 'react';
-import { withGoogleMap, GoogleMap, withScriptjs, InfoWindow, Marker } from "react-google-maps";
+import {  withGoogleMap, GoogleMap, withScriptjs, InfoWindow, Marker } from "react-google-maps";
 import Geocode from "react-geocode";
 import Autocomplete from 'react-google-autocomplete';
 import { Descriptions } from 'antd';
-
-
-
+import car2 from './car2.png';
+import man from './man.png';
+ 
 Geocode.setApiKey("AIzaSyB6Up16Hpna6lEpVn0JQmkKI9ny0ulJNYg");
 Geocode.enableDebug();
 
 class LocationSearchModal extends React.Component {
+  
 
     state = {
+       isOpen: false,
+       indexOpen:-1,
         address: '',
         city: '',
         area: '',
@@ -31,6 +34,7 @@ class LocationSearchModal extends React.Component {
 
     componentDidMount() {
         if (navigator.geolocation) {
+
             navigator.geolocation.getCurrentPosition(position => {
                 this.setState({
                     mapPosition: {
@@ -85,6 +89,20 @@ class LocationSearchModal extends React.Component {
     //     }
     // }
 
+    handleToggleOpen = (index) => {
+    this.setState({
+      isOpen: true,
+      indexOpen:index
+    });
+  };
+
+  handleToggleClose = () => {
+    this.setState({
+      isOpen: false,
+    });
+  };
+
+
     getCity = (addressArray) => {
         let city = '';
         for (let i = 0; i < addressArray.length; i++) {
@@ -121,11 +139,8 @@ class LocationSearchModal extends React.Component {
         }
     };
 
-    onChange = (event) => {
-        this.setState({ [event.target.name]: event.target.value });
-    };
-
-    onInfoWindowClose = (event) => { };
+    
+   
 
     onMarkerDragEnd = (event) => {
         let newLat = event.latLng.lat(),
@@ -202,7 +217,7 @@ class LocationSearchModal extends React.Component {
     //     <GoogleMap
 
     render() {
-    
+   
         const AsyncMap = withScriptjs(
             withGoogleMap(
                 props => (
@@ -214,21 +229,155 @@ class LocationSearchModal extends React.Component {
 
                         {/*Marker*/}
                         <Marker
-                            color="blue" 
+                            key={0}
                             google={this.props.google}
                             name={'Dolores park'}
                             draggable={true}
                             onDragEnd={this.onMarkerDragEnd}
                             position={{ lat: this.state.markerPosition.lat, lng: this.state.markerPosition.lng }}
-                        />
-                        <InfoWindow
-                            onClose={this.onInfoWindowClose}
-                            position={{ lat: (this.state.markerPosition.lat + 0.0018), lng: this.state.markerPosition.lng }}
+                            
+                             icon={{
+
+                                  url: man,
+                                  scaledSize : new window.google.maps.Size(25,25 ),
+
+    }}
+
+        
+                            
+                         onClick={() => this.handleToggleOpen(0)}
+
+        
+                            
                         >
+                       {this.state.isOpen && 0===this.state.indexOpen &&( 
+                        <InfoWindow
+                            
+                        >
+                         
                             <div>
                                 <span style={{ padding: 0, margin: 0 }}>{this.state.address}</span>
                             </div>
-                        </InfoWindow>
+                        </InfoWindow>)}
+                    </Marker>
+                       
+
+                         <Marker
+                             key={1}
+                            google={this.props.google}
+                            name={'Dolores park'}
+                            position={{ lat: 33.5846, lng: -7.5911 }}
+                            
+                             icon={{
+
+                              url: car2,
+                              scaledSize : new window.google.maps.Size(50,50 ),
+
+    }}
+
+        
+                            
+                         onClick={() => this.handleToggleOpen(1)}
+
+        
+                            
+                        >
+                       {this.state.isOpen && 1===this.state.indexOpen && ( <InfoWindow
+                            
+                        >
+                         
+                            <div>
+                                <span style={{ padding: 0, margin: 0 }}>{this.state.address}</span>
+                            </div>
+                        </InfoWindow>)}
+                    </Marker>
+                        
+                        <Marker
+                             key={2}
+                            google={this.props.google}
+                            name={'Dolores park'}
+                            position={{ lat: 33.5688, lng: -7.5877 }}
+                            
+                             icon={{
+
+                               url: car2,
+                               scaledSize : new window.google.maps.Size(50,50 ),
+
+    }}
+
+        
+                            
+                         onClick={() => this.handleToggleOpen(2)}
+
+        
+                            
+                        >
+                       {this.state.isOpen && 2===this.state.indexOpen && ( <InfoWindow
+                            
+                        >
+                         
+                            <div>
+                                <span style={{ padding: 0, margin: 0 }}>{this.state.address}</span>
+                            </div>
+                        </InfoWindow>)}
+                    </Marker>
+                        <Marker />
+                        <Marker
+                             key={3}
+                            google={this.props.google}
+                            name={'Dolores park'}
+                            position={{ lat: 33.5795, lng: -7.5829 }}
+                            
+                             icon={{
+
+                             url: car2,
+                             scaledSize : new window.google.maps.Size(50,50 ),
+
+    }}
+
+        
+                            
+                         onClick={() => this.handleToggleOpen(3)}
+
+        
+                            
+                        >
+                       {this.state.isOpen && 3===this.state.indexOpen && ( <InfoWindow
+                            
+                        >
+                         
+                            <div>
+                                <span style={{ padding: 0, margin: 0 }}>{this.state.address}</span>
+                            </div>
+                        </InfoWindow>)}
+                    </Marker>
+                        
+                         <Marker
+                            key={4}
+                            google={this.props.google}
+                            name={'Dolores park'}
+                            position={{ lat: 33.5739472, lng: -7.594480099999999}}
+                            
+                             icon={{
+
+                                 url: car2,
+                                 scaledSize : new window.google.maps.Size(50,50 ),
+
+                              }}
+                              onClick={() => this.handleToggleOpen(4)}
+
+        
+                            
+                        >
+                       {this.state.isOpen && 4===this.state.indexOpen &&( <InfoWindow
+                            
+                        >
+                         
+                            <div>
+                                <span style={{ padding: 0, margin: 0 }}>{this.state.address}</span>
+                            </div>
+                        </InfoWindow>)}
+                    </Marker>
                         <Marker />
 
                         {/* <MarkerWithLabel
