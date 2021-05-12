@@ -1,11 +1,13 @@
 import React from 'react';
 import {  withGoogleMap, GoogleMap, withScriptjs, InfoWindow, Marker } from "react-google-maps";
 import Geocode from "react-geocode";
-import Autocomplete from 'react-google-autocomplete';
 import { Descriptions } from 'antd';
-import car2 from './car2.png';
+
 import man from './man.png';
- 
+
+import Cardlist1 from './CardCarLocation';
+import SearchMap from './SearchMap';
+
 Geocode.setApiKey("AIzaSyB6Up16Hpna6lEpVn0JQmkKI9ny0ulJNYg");
 Geocode.enableDebug();
 
@@ -13,6 +15,8 @@ class LocationSearchModal extends React.Component {
   
 
     state = {
+       typeV:'',
+       typeR:'',
        isOpen: false,
        indexOpen:-1,
         address: '',
@@ -88,6 +92,19 @@ class LocationSearchModal extends React.Component {
     //         return false
     //     }
     // }
+   onVchange = (event) => {
+  
+  this.setState({typeV: event.target.value });
+  
+}
+
+  onRchange = (event) => {
+  
+  this.setState({typeR: event.target.value });
+  console.log('typeR',this.state.typeR);
+  
+}
+    
 
     handleToggleOpen = (index) => {
     this.setState({
@@ -204,6 +221,9 @@ class LocationSearchModal extends React.Component {
         })
     };
 
+
+
+
     // const AsyncMap = compose(
     //     withProps({
     //         googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyALVjLwOIM1gf7EzdJJVmWLKdLP-yZGTcw&v=3.exp&libraries=geometry,drawing,places",
@@ -217,6 +237,8 @@ class LocationSearchModal extends React.Component {
     //     <GoogleMap
 
     render() {
+
+          
    
         const AsyncMap = withScriptjs(
             withGoogleMap(
@@ -229,7 +251,7 @@ class LocationSearchModal extends React.Component {
 
                         {/*Marker*/}
                         <Marker
-                            key={0}
+                            key={-1}
                             google={this.props.google}
                             name={'Dolores park'}
                             draggable={true}
@@ -245,12 +267,12 @@ class LocationSearchModal extends React.Component {
 
         
                             
-                         onClick={() => this.handleToggleOpen(0)}
+                         onClick={() => this.handleToggleOpen(-1)}
 
         
                             
                         >
-                       {this.state.isOpen && 0===this.state.indexOpen &&( 
+                       {this.state.isOpen && -1===this.state.indexOpen &&( 
                         <InfoWindow
                             
                         >
@@ -261,124 +283,11 @@ class LocationSearchModal extends React.Component {
                         </InfoWindow>)}
                     </Marker>
                        
-
-                         <Marker
-                             key={1}
-                            google={this.props.google}
-                            name={'Dolores park'}
-                            position={{ lat: 33.5846, lng: -7.5911 }}
-                            
-                             icon={{
-
-                              url: car2,
-                              scaledSize : new window.google.maps.Size(50,50 ),
-
-    }}
-
-        
-                            
-                         onClick={() => this.handleToggleOpen(1)}
-
-        
-                            
-                        >
-                       {this.state.isOpen && 1===this.state.indexOpen && ( <InfoWindow
-                            
-                        >
+      
                          
-                            <div>
-                                <span style={{ padding: 0, margin: 0 }}>{this.state.address}</span>
-                            </div>
-                        </InfoWindow>)}
-                    </Marker>
-                        
-                        <Marker
-                             key={2}
-                            google={this.props.google}
-                            name={'Dolores park'}
-                            position={{ lat: 33.5688, lng: -7.5877 }}
-                            
-                             icon={{
-
-                               url: car2,
-                               scaledSize : new window.google.maps.Size(50,50 ),
-
-    }}
-
-        
-                            
-                         onClick={() => this.handleToggleOpen(2)}
-
-        
-                            
-                        >
-                       {this.state.isOpen && 2===this.state.indexOpen && ( <InfoWindow
-                            
-                        >
-                         
-                            <div>
-                                <span style={{ padding: 0, margin: 0 }}>{this.state.address}</span>
-                            </div>
-                        </InfoWindow>)}
-                    </Marker>
-                        <Marker />
-                        <Marker
-                             key={3}
-                            google={this.props.google}
-                            name={'Dolores park'}
-                            position={{ lat: 33.5795, lng: -7.5829 }}
-                            
-                             icon={{
-
-                             url: car2,
-                             scaledSize : new window.google.maps.Size(50,50 ),
-
-    }}
-
-        
-                            
-                         onClick={() => this.handleToggleOpen(3)}
-
-        
-                            
-                        >
-                       {this.state.isOpen && 3===this.state.indexOpen && ( <InfoWindow
-                            
-                        >
-                         
-                            <div>
-                                <span style={{ padding: 0, margin: 0 }}>{this.state.address}</span>
-                            </div>
-                        </InfoWindow>)}
-                    </Marker>
-                        
-                         <Marker
-                            key={4}
-                            google={this.props.google}
-                            name={'Dolores park'}
-                            position={{ lat: 33.5739472, lng: -7.594480099999999}}
-                            
-                             icon={{
-
-                                 url: car2,
-                                 scaledSize : new window.google.maps.Size(50,50 ),
-
-                              }}
-                              onClick={() => this.handleToggleOpen(4)}
-
-        
-                            
-                        >
-                       {this.state.isOpen && 4===this.state.indexOpen &&( <InfoWindow
-                            
-                        >
-                         
-                            <div>
-                                <span style={{ padding: 0, margin: 0 }}>{this.state.address}</span>
-                            </div>
-                        </InfoWindow>)}
-                    </Marker>
-                        <Marker />
+                        <Cardlist1 handleToggleOpen={this.handleToggleOpen} isOpen={this.state.isOpen} indexOpen={this.state.indexOpen} google={this.props.google} 
+                                   typeV={this.state.typeV}  typeR={this.state.typeR} />
+                       
 
                         {/* <MarkerWithLabel
                             position={{ lat: -34.397, lng: 150.644 }}
@@ -390,31 +299,18 @@ class LocationSearchModal extends React.Component {
 
 
                         {/* For Auto complete Search Box */}
-                        <Autocomplete
-                            style={{
-                                width: '100%',
-                                height: '40px',
-                                paddingLeft: '16px',
-                                marginTop: '2px',
-                                marginBottom: '2rem'
-                            }}
-                            onPlaceSelected={this.onPlaceSelected}
-                            types={['(regions)']}
-                        />
+                        
                     </GoogleMap>
                 )
             )
         );
 
         return (
-            <div style={{ padding: '1rem', margin: '0 auto', maxWidth: 1000 }}>
-                <h1>Google Map Basic</h1>
-                <Descriptions bordered>
-                    <Descriptions.Item label="City">{this.state.city}</Descriptions.Item>
-                    <Descriptions.Item label="Area">{this.state.area}</Descriptions.Item>
-                    <Descriptions.Item label="State">{this.state.state}</Descriptions.Item>
-                    <Descriptions.Item label="Address">{this.state.address}</Descriptions.Item>
-                </Descriptions>
+            <div className='tc' style={{ padding: '1rem', margin: '0 auto', maxWidth: 1000 }}>
+                
+               
+            <SearchMap onPlaceSelected={this.onPlaceSelected} 
+                       onVchange={this.onVchange} onRchange={this.onRchange} />
 
                 <AsyncMap
                     googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6Up16Hpna6lEpVn0JQmkKI9ny0ulJNYg&libraries=places"
@@ -427,7 +323,13 @@ class LocationSearchModal extends React.Component {
                     mapElement={
                         <div style={{ height: `100%` }} />
                     }
-                />
+                /> 
+                <Descriptions bordered>
+                    <Descriptions.Item label="City">{this.state.city}</Descriptions.Item>
+                    <Descriptions.Item label="Area">{this.state.area}</Descriptions.Item>
+                    <Descriptions.Item label="State">{this.state.state}</Descriptions.Item>
+                    <Descriptions.Item label="Address">{this.state.address}</Descriptions.Item>
+                </Descriptions>
             </div>
         )
     }
