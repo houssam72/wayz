@@ -42,22 +42,22 @@ const Cardlist=({robots,onPayment,route,payInfo})=>{
 
 
 
- if(route==='home')
+if(route==='home')
 {
 	return (
 
 		<div>
 	
-  {Cardcomponent1};
-    </div>);
- }  
- else if(route==='payee'){
- 	return(
-
-  <div>
-  {Cardcomponent2};
-  </div>
-);} 
+			{Cardcomponent1};
+		</div>);
+}
+else if(route==='payee'){
+	return(
+		<div>
+  			{Cardcomponent2};
+		</div>
+);
+} 
 
 }
 

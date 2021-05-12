@@ -63,7 +63,7 @@ const Card =({name,email,id,number,depart,arrive,prix,date,hd,ha,onPayment})=>{
              <input 
             className="bl br4 ph3 pv1  ba white ml3  grow pointer " 
             type="submit" 
-            value="Payee"
+            value="Enregistrer"
             onClick={()=>onPayment({id})}
              />
       </div>

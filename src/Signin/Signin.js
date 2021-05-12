@@ -28,7 +28,7 @@ return(
              />
     </div>
     <div className="lh-copy mt3">
-      <p onClick={()=>onRouteChange('register')} 
+      <p onClick={()=>onRouteChange('registrer')} 
       className="tc f6 link dim white db pointer">Register</p>
     
     </div>

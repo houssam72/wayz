@@ -1,0 +1,17 @@
+.form_dema{
+	display: flex;
+	font-weight: bold;
+}
+
+/*.fir_div {
+	height: 200px;
+    max-width: 50%;
+}*/
+.sec_form{
+	margin-left: 10px;
+	padding: 10px;
+	font-weight: bold;
+}
+.div_demancov{
+	margin-top: -8%;
+}

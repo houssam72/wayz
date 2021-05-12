@@ -9,7 +9,18 @@ export const users = [
     arrive:'mohammedia',
     prix:'200', date:'03/06/2021',
     heureDepart:'10:15',
-    heureArrivee:'12:20'
+    heureArrivee:'12:20',
+    nom:'',
+    prenom:'',
+    jour:'',
+    mois:'',
+    annee:'',
+    sexe:'',
+    telephone:'',
+    username1:'',
+    password:'',
+    ville:'',
+    picture:''
   },
   {
     id: 2,

@@ -7,10 +7,11 @@ import Navigation from './Navigation/navigation';
 import Logo from './logo/logo';
 import Signin from './Signin/Signin';
 import Register from './Register/Register';
-import Bars from './Bars/Bars';
+// import Bars from './Bars/Bars';
 import Search from './search/Search';
 import LocationSearchModal from './Map/Map';
-
+import Creecov from './creecov/creecov';
+import Demandercov from './demandercov/demandercov';
 class App extends Component {
 
 constructor(){
@@ -54,7 +55,11 @@ onRouteChange=(route) =>{
          ?<LocationSearchModal/>
          :(this.state.route==='registrer'
          ?<Register onRouteChange={this.onRouteChange}/>
-         :<div></div>))
+         :(this.state.route==='creecov'
+          ?<Creecov onRouteChange={this.onRouteChange} />
+         :(this.state.route==='demandercov'
+          ?<Demandercov/> 
+         :<div></div>))))
 )
     }
 
@@ -63,8 +68,8 @@ onRouteChange=(route) =>{
 
    
   }
-/*  {/*<LocationSearchModal/>*/}
-*/    </div>
+  {/*<LocationSearchModal/>*/}
+   </div>
   
   );
 }
