@@ -3,7 +3,7 @@ import './card.css';
 const Card =({name,email,id,number,depart,arrive,prix,date,hd,ha,onPayment})=>{
 	
   return (
-   <div className='pa2 center bg-light-green br3 ma2 grow  shadow-5' style={{width:'65%'}}> 
+   <div className='pa2 center bg-light-green br3 ma2 grow  shadow-5' style={{width:'65%', height:'400px'}}> 
   {/*partie profil nom date boutton*/}
    <div className='flex '>
      <div className='w-25 pa1 ma1'>

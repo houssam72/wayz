@@ -87,11 +87,11 @@ closeNav(){
             <div id="mySidenav" className="sidenav" style={{width :'330px',marginTop :"60px"}} >
                 <a href='#' className="closebtn" onClick={()=>this.closeNav()}  >&times;</a>
                 <a href='#' onClick={()=>this.props.onRouteChange('home')}>Home</a>
-                  <a href='#' onClick={()=>this.props.onRouteChange('demandercov')}>Demander un covoiturage</a>
+                  <a href='#' onClick={()=>this.props.onRouteChange('demandercov')}>Demander un trajet</a>
                 <a href='#' onClick={()=>this.props.onRouteChange('creecov')}>Créer un covoiturage</a>
                 <a href='#' onClick={()=>this.props.onRouteChange('map')}>Map</a>
-                <a href='#' onClick={()=>this.props.onRouteChange('payee')}>Covoiturages enregistrer </a>
-                <a href='#'>Mes Messages</a>
+                <a href='#' onClick={()=>this.props.onRouteChange('payee')}>Mes enregistrements </a>
+                <a href='#' onClick={()=>this.props.onRouteChange('chat')}>Mes Messages</a>
                 <a href='#'>Contact</a>
                 <div className="navbar_right">
                     <ul>
