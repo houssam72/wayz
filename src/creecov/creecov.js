@@ -57,41 +57,24 @@ constructor(){
  						 <label for="nbr_place_dispo">nombre de place disponible : </label>
  						 <input className="pa1 input-reset ba bg-transparent hover-bg-black hover-white w-40 b--white mb2" type="number" max="4" min="1" id="nbr_place_dispo" name="nbr_place_dispo" /><br></br>
  						 <label for="bagage">Bagage : </label>
- 						 <input className="pa1 input-reset ba bg-transparent hover-bg-black hover-white w-40 b--white mb2" type="text" id="bagage" name="bagage" /><br></br>
- 						 <label for="fumeur">Fumeur : </label>
- 						 <select className="pa1 input-reset ba bg-transparent hover-bg-black hover-white w-40 b--white mb2" name="fumeur" id="fumeur">
- 						 	<option value="rien"></option>
-   							<option value="oui">Oui</option>
-  							<option value="non">Non</option>
-  						 </select><br></br>
- 						 <label for="marque_voiture">Marque de la voiture : </label>
- 						 <input className="pa1 input-reset ba bg-transparent hover-bg-black hover-white w-40 b--white mb2" type="text" id="marque_voiture" name="marque_voiture" /><br></br>
- 						 <label for="confort_voiture">Confort de la voiture : </label>
- 						 <select className="pa1 input-reset ba bg-transparent hover-bg-black hover-white w-40 b--white mb2" name="confort_voiture" id="confort_voiture">
- 						 	<option value="rien"></option>
-   							<option value="parfait">Parfait</option>
-  							<option value="tres bien">Tres bien</option>
-    						<option value="bien">Bien</option>
-    						<option value="pas_mal">Pas mal</option>
-  						 </select><br></br>
- 						 <label for="type_musique">Type de musique : </label>
- 						 <select className="pa1 input-reset ba bg-transparent hover-bg-black hover-white w-40 b--white mb2" name="type_musique" id="type_musique">
- 						 	<option value="rien"></option>
-   							<option value="pop">Pop</option>
-  							<option value="blues">Blues</option>
-    						<option value="rock">Rock</option>
-    						<option value="chaabi">Chaabi</option>
-    						<option value="rap">Rap</option>
-    						<option value="autre">Autres</option>
-  						 </select><br></br>
- 						 <label for="animaux">Animaux de compagnie : </label>
- 						 <select className="pa1 input-reset ba bg-transparent hover-bg-black hover-white w-40 b--white mb2" name="animaux" id="animaux">
- 						 	<option value="rien"></option>
-   							<option value="non">Non</option>
-  							<option value="chien">Chien</option>
-    						<option value="chat">Chat</option>
-    						<option value="autre">Autres</option>
-  						 </select><br></br>
+ 						 <input className="pa1 input-reset ba bg-transparent hover-bg-black hover-white w-40 b--white mb2" type="text" id="bagage" name="bagage" /><br></br> 					
+ 						 <label for="marque_voiture">Type du véhicule : </label>
+             <select className="pa1 input-reset ba bg-transparent hover-bg-black hover-white w-40 b--white mb2" name="type_vehi" id="type_vehi">
+              <option value="rien"></option>
+                <option value="moto">Moto</option>
+                <option value="voiture">Voiture</option>
+                <option value="autre">Autre</option>
+               </select><br></br>
+             <label for="marque_voiture">Marque du véhicule : </label>
+             <input className="pa1 input-reset ba bg-transparent hover-bg-black hover-white w-40 b--white mb2" type="text" id="marque_vehi" name="marque_vehi" /><br></br>
+             <label for="confort_voiture">Confort du véhicule : </label>
+             <select className="pa1 input-reset ba bg-transparent hover-bg-black hover-white w-40 b--white mb2" name="confort_vehi" id="confort_vehi">
+              <option value="rien"></option>
+                <option value="parfait">Parfait</option>
+                <option value="tres bien">Tres bien</option>
+                <option value="bien">Bien</option>
+                <option value="pas_mal">Pas mal</option>
+               </select><br></br>
   						 <label for="prix">Prix : </label>
  						 <input className="pa1 input-reset ba bg-transparent hover-bg-black hover-white w-40 b--white mb2" type="text" id="prix" name="prix" />DH<br></br>
   						 <input className="b white pa1 input-reset ba bg-transparent hover-bg-black hover-white w-30 b--white center mb2 mt3 ph2" type="submit" value="Enregistrer" onClick={()=>this.props.onRouteChange('home')} />
@@ -100,6 +83,8 @@ constructor(){
 				</div>
 				: (this.state.choice==="avancee" ? <div>	
 					<form className="white br3 ba  b--black-10 mv4 w-100 w-50-m w-100-l mw6 shadow-5 center sec_form">
+             <label for="Adresse_depart">Ma position : </label>
+             <input className="pa1 input-reset ba bg-transparent hover-bg-black hover-white w-40 b--white mb2" type="text" id="position" name="posiiton"/><br></br>
   						<label for="Adresse_depart">Adresse de depart : </label>
  						 <input className="pa1 input-reset ba bg-transparent hover-bg-black hover-white w-40 b--white mb2" type="text" id="ville_depart" name="ville_depart"/><br></br>
  						 <label for="adresse_arrivee">Adresse d'arrivée : </label>
@@ -114,39 +99,22 @@ constructor(){
  						 <input className="pa1 input-reset ba bg-transparent hover-bg-black hover-white w-40 b--white mb2" type="number" max="4" min="1" id="nbr_place_dispo" name="nbr_place_dispo" /><br></br>
  						 <label for="bagage">Bagage : </label>
  						 <input className="pa1 input-reset ba bg-transparent hover-bg-black hover-white w-40 b--white mb2" type="text" id="bagage" name="bagage" /><br></br>
- 						 <label for="fumeur">Fumeur : </label>
- 						 <select className="pa1 input-reset ba bg-transparent hover-bg-black hover-white w-40 b--white mb2" name="fumeur" id="fumeur">
- 						 	<option value="rien"></option>
-   							<option value="oui">Oui</option>
-  							<option value="non">Non</option>
-  						 </select><br></br>
- 						 <label for="marque_voiture">Marque de la voiture : </label>
- 						 <input className="pa1 input-reset ba bg-transparent hover-bg-black hover-white w-40 b--white mb2" type="text" id="marque_voiture" name="marque_voiture" /><br></br>
- 						 <label for="confort_voiture">Confort de la voiture : </label>
- 						 <select className="pa1 input-reset ba bg-transparent hover-bg-black hover-white w-40 b--white mb2" name="confort_voiture" id="confort_voiture">
+              <label for="marque_voiture">Type du véhicule : </label>
+             <select className="pa1 input-reset ba bg-transparent hover-bg-black hover-white w-40 b--white mb2" name="type_vehi" id="type_vehi">
+              <option value="rien"></option>
+                <option value="moto">Moto</option>
+                <option value="voiture">Voiture</option>
+                <option value="autre">Autre</option>
+               </select><br></br>
+ 						 <label for="marque_voiture">Marque du véhicule : </label>
+ 						 <input className="pa1 input-reset ba bg-transparent hover-bg-black hover-white w-40 b--white mb2" type="text" id="marque_vehi" name="marque_vehi" /><br></br>
+ 						 <label for="confort_voiture">Confort du véhicule : </label>
+ 						 <select className="pa1 input-reset ba bg-transparent hover-bg-black hover-white w-40 b--white mb2" name="confort_vehi" id="confort_vehi">
  						 	<option value="rien"></option>
    							<option value="parfait">Parfait</option>
   							<option value="tres bien">Tres bien</option>
     						<option value="bien">Bien</option>
     						<option value="pas_mal">Pas mal</option>
-  						 </select><br></br>
- 						 <label for="type_musique">Type de musique : </label>
- 						 <select className="pa1 input-reset ba bg-transparent hover-bg-black hover-white w-40 b--white mb2" name="type_musique" id="type_musique">
- 						 	<option value="rien"></option>
-   							<option value="pop">Pop</option>
-  							<option value="blues">Blues</option>
-    						<option value="rock">Rock</option>
-    						<option value="chaabi">Chaabi</option>
-    						<option value="rap">Rap</option>
-    						<option value="autre">Autres</option>
-  						 </select><br></br>
- 						 <label for="animaux">Animaux de compagnie : </label>
- 						 <select className="pa1 input-reset ba bg-transparent hover-bg-black hover-white w-40 b--white mb2" name="animaux" id="animaux">
- 						 	<option value="rien"></option>
-   							<option value="non">Non</option>
-  							<option value="chien">Chien</option>
-    						<option value="chat">Chat</option>
-    						<option value="autre">Autres</option>
   						 </select><br></br>
   						 <label for="prix">Prix : </label>
  						 <input className="pa1 input-reset ba bg-transparent hover-bg-black hover-white w-40 b--white mb2" type="text" id="prix" name="prix" />DH<br></br>

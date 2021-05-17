@@ -41,7 +41,11 @@ closeNav(){
                 <div className="navbar_left">
                     
                     <ul  className="menu">
-                        <li className="li_img"><img src={img} alt="PDP" width="100%" className="img_pers" /></li>
+                    {
+                      (this.props.route==='profile' 
+                        ? <> <li className="li_img"><a href='#' onClick={()=>this.props.onRouteChange('home')} style={{}} className="apdp"><img src={img} alt="PDP" width="100%" className="img_pers" /></a></li></> 
+                        :  <li className="li_img"><a href='#' onClick={()=>this.props.onRouteChange('profile')} style={{}} className="apdp"><img src={img} alt="PDP" width="100%" className="img_pers" /></a></li> )
+                    }
                         <li>
                             <div className="dropdown">
                               <button className="dropbtn white"> ▾ </button>
@@ -90,9 +94,11 @@ closeNav(){
                   <a href='#' onClick={()=>this.props.onRouteChange('demandercov')}>Demander un trajet</a>
                 <a href='#' onClick={()=>this.props.onRouteChange('creecov')}>Créer un covoiturage</a>
                 <a href='#' onClick={()=>this.props.onRouteChange('map')}>Map</a>
-                <a href='#' onClick={()=>this.props.onRouteChange('payee')}>Mes enregistrements </a>
+                <a href='#' onClick={()=>this.props.onRouteChange('save')}>Mes enregistrements </a>
+                <a href='#' onClick={()=>this.props.onRouteChange('mine')}>Mes covoiturages</a>
                 <a href='#' onClick={()=>this.props.onRouteChange('chat')}>Mes Messages</a>
-                <a href='#'>Contact</a>
+                <a href='#' onClick={()=>this.props.onRouteChange('ques')}>Top Questions</a>
+                <a href='#' onClick={()=>this.props.onRouteChange('about')}>About</a>
                 <div className="navbar_right">
                     <ul>
                         <li><a href='#' onClick={()=>this.props.onRouteChange('homep')}>Sign Out</a> </li>

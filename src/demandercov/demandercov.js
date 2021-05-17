@@ -39,7 +39,7 @@ constructor(){
   						<label for="ville_depart">Ville de depart : </label>
   						<Autocomplete
                            className='pa1 input-reset ba bg-transparent hover-bg-black hover-white w-40 b--white mb2'
-                            types={['geocode']}
+                            types={['place']}
                             id="ville_depart" name="ville_depart"
                            
                         /><br></br>
@@ -60,22 +60,6 @@ constructor(){
  						 <input className="pa1 input-reset ba bg-transparent hover-bg-black hover-white w-40 b--white mb2" type="number" max="4" min="1" id="nbr_place_dispo" name="nbr_place_dispo" /><br></br>
  						 <label for="bagage">Bagage : </label>
  						 <input className="pa1 input-reset ba bg-transparent hover-bg-black hover-white w-40 b--white mb2" type="text" id="bagage" name="bagage" /><br></br>
- 						 <label for="fumeur">Fumeur : </label>
- 						 <select className="pa1 input-reset ba bg-transparent hover-bg-black hover-white w-40 b--white mb2" name="fumeur" id="fumeur">
- 						 	<option value="rien"></option>
-   							<option value="oui">Oui</option>
-  							<option value="non">Non</option>
-  						 </select><br></br>
- 						
- 						 
- 						 <label for="animaux">Animaux de compagnie : </label>
- 						 <select className="pa1 input-reset ba bg-transparent hover-bg-black hover-white w-40 b--white mb2" name="animaux" id="animaux">
- 						 	<option value="rien"></option>
-   							<option value="non">Non</option>
-  							<option value="chien">Chien</option>
-    						<option value="chat">Chat</option>
-    						<option value="autre">Autres</option>
-  						 </select><br></br>
 
   						 <input className="b white pa1 input-reset ba bg-transparent hover-bg-black hover-white w-30 b--white center mb2 mt3 ph2" type="submit" value="Enregistrer" onClick={()=>this.props.onRouteChange('home')} />
   						 <input className="b white pa1  input-reset ba bg-transparent hover-bg-black hover-white w-30 b--white center mb2 mt3 ph2" type="reset"  value="Annuler"  onClick={()=>this.props.onRouteChange('home')}/>
@@ -97,20 +81,6 @@ constructor(){
  						 <input className="pa1 input-reset ba bg-transparent hover-bg-black hover-white w-40 b--white mb2" type="number" max="4" min="1" id="nbr_place_dispo" name="nbr_place_dispo" /><br></br>
  						 <label for="bagage">Bagage : </label>
  						 <input className="pa1 input-reset ba bg-transparent hover-bg-black hover-white w-40 b--white mb2" type="text" id="bagage" name="bagage" /><br></br>
- 						 <label for="fumeur">Fumeur : </label>
- 						 <select className="pa1 input-reset ba bg-transparent hover-bg-black hover-white w-40 b--white mb2" name="fumeur" id="fumeur">
- 						 	<option value="rien"></option>
-   							<option value="oui">Oui</option>
-  							<option value="non">Non</option>
-  						 </select><br></br>
- 						 <label for="animaux">Animaux de compagnie : </label>
- 						 <select className="pa1 input-reset ba bg-transparent hover-bg-black hover-white w-40 b--white mb2" name="animaux" id="animaux">
- 						 	<option value="rien"></option>
-   							<option value="non">Non</option>
-  							<option value="chien">Chien</option>
-    						<option value="chat">Chat</option>
-    						<option value="autre">Autres</option>
-  						 </select><br></br>
   
   						 <input className="b white pa1 input-reset ba bg-transparent hover-bg-black hover-white w-30 b--white center mb2 mt3 ph2" type="submit" value="Enregistrer" />
   						 <input className="b white pa1 input-reset ba bg-transparent hover-bg-black hover-white w-30 b--white center mb2 mt3 ph2" type="reset"  value="Annuler"  />
