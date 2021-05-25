@@ -59,16 +59,28 @@ onPayment=(x)=>{
   })
   if (this.state.robots.length === 0) {
     return <h1> LOADING ... </h1>
-  } else {
+  } else if(this.props.route==='home'){
   return(
   	 <div className='tc'>
-  	   
+  	  
       <Searchbox searchchange1={this.onSearchchange1} searchchange2={this.onSearchchange2} searchchange3={this.onSearchchange3}/>
       <Cardlist robots={filterrobots} onPayment={this.onPayment} route={this.props.route} payInfo={this.state.payInfo} />
      
      </div>
   	);
+}else {
+  return(
+   <div className='tc'>
+      
+     
+      
+      
+      <Cardlist robots={filterrobots} onPayment={this.onPayment} route={this.props.route} payInfo={this.state.payInfo} />
+     
+     </div>
+     );
 }
   }
 }
+
 export default Search;

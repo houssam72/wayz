@@ -168,3 +168,20 @@ ul.menu{
 .navbar.navbar1 .menu a.active{
 	border-bottom: 3px solid #505978;
 }
+
+
+.apdp:link {
+  text-decoration: none;
+}
+
+.apdp:visited {
+  text-decoration: none;
+}
+
+.apdp:hover {
+  text-decoration: none;
+}
+
+.apdp:active {
+  text-decoration: underline;
+}

@@ -1,9 +1,10 @@
 import React from 'react';
 import Autocomplete from 'react-google-autocomplete';
+import './Searchbox.css'
 
 const Searchbox=({  searchchange1,searchchange2,searchchange3}) =>{
   return (
-  	<div className='pa2 mb5'>
+  	<div className='pa2 mb5 div_searchbox'>
   
      <Autocomplete
                            className='pa3 ba b--green bg-lightest-blue'

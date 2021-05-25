@@ -373,7 +373,7 @@ export default LocationSearchModal;
 
 
 
-{/*import React, { Component } from "react";
+/*import React, { Component } from "react";
 import {
   InfoWindow,
   withScriptjs,
@@ -627,4 +627,4 @@ class Map extends Component {
 }
 }
 
-export default Map;*/}
+export default Map;*/

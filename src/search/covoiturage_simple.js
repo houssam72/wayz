@@ -1,0 +1,37 @@
+export const covoiturage_simple = [
+  {
+    id_covoiturage:,
+    id_conducteur:,
+    ville_depart:,
+    ville_arrivee:,
+    heure_depart:,
+    heure_arrivee:,
+    date:,
+    nbr_place_dispo:,
+    bagage:,
+    fumeur:,
+    marque_voiture:,
+    confort_voiture:,
+    type_musique:,
+    animaux:,
+    prix:
+  },
+  {
+    id_covoiturage:,
+    id_conducteur:,
+    ville_depart:,
+    ville_arrivee:,
+    heure_depart:,
+    heure_arrivee:,
+    date:,
+    nbr_place_dispo:,
+    bagage:,
+    fumeur:,
+    marque_voiture:,
+    confort_voiture:,
+    type_musique:,
+    animaux:,
+    prix:
+  }
+  
+];

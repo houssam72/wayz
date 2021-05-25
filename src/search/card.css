@@ -5,7 +5,7 @@ body {
   font-family: "Lato", sans-serif;
 } 
 
-.d{
+/*.d{
 	margin-top: 25%;
 }
 
@@ -20,9 +20,9 @@ body {
       "c e d d ";
       
 
-}
+}*/
 
-.a{
+/*.a{
     grid-area: a;
 }
 .z{
@@ -36,9 +36,11 @@ body {
 }
 .e{
     grid-area: e;
-}
+}*/
 .bt{
-	background: linear-gradient(89deg,#8E0E00 0%,#1F1C18 100%);
+	/*background: linear-gradient(89deg,#8E0E00 0%,#1F1C18 100%);*/
+  background: linear-gradient(89deg,#43cea2 0%,#185a9d 100%);
+
 }
 .bl{
 	background: linear-gradient(89deg,#000000 ,#434343 );

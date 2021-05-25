@@ -7,11 +7,18 @@ import Navigation from './Navigation/navigation';
 import Logo from './logo/logo';
 import Signin from './Signin/Signin';
 import Register from './Register/Register';
-import Bars from './Bars/Bars';
+// import Bars from './Bars/Bars';
 import Search from './search/Search';
 import LocationSearchModal from './Map/Map';
 import Creecov from './creecov/creecov';
 import Demandercov from './demandercov/demandercov';
+import Questions from './Questions/Questions'
+import Join from './Join/Join';
+import Chat from './Chat/Chat';
+import About from './About/About';
+import Profil from './profile/profile';
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
 class App extends Component {
 
 constructor(){
@@ -49,17 +56,25 @@ onRouteChange=(route) =>{
     <Logo/>
     { this.state.route==='signin'
       ? <Signin onRouteChange={this.onRouteChange}/>
-      : (this.state.route==='home' || this.state.route==='payee'
+      : (this.state.route==='home' || this.state.route==='payee' || this.state.route==='mine' || this.state.route==='save' 
          ?<Search route={this.state.route} />
          :(this.state.route==='map'
          ?<LocationSearchModal/>
          :(this.state.route==='registrer'
          ?<Register onRouteChange={this.onRouteChange}/>
          :(this.state.route==='creecov'
-          ?<Creecov/>
+          ?<Creecov onRouteChange={this.onRouteChange} />
          :(this.state.route==='demandercov'
           ?<Demandercov/> 
-         :<div></div>))))
+         :(this.state.route==='chat'
+          ?<Router><Route path="/" exact component={Join} /><Route path="/chat" component={Chat} /></Router>
+         :(this.state.route==='ques'
+          ?<Questions/>
+         :(this.state.route==='about'
+            ?<About/>
+         :(this.state.route==='profile'
+          ?<Profil/>
+          :<div></div>))))))))
 )
     }
 
@@ -68,8 +83,8 @@ onRouteChange=(route) =>{
 
    
   }
-/*  {/*<LocationSearchModal/>*/}
-*/    </div>
+  {/*<LocationSearchModal/>*/}
+   </div>
   
   );
 }
