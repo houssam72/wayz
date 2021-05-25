@@ -2,7 +2,8 @@ import React,{Component} from 'react';
 import Cardlist from './Cardlist';
 import Searchbox from './Searchbox';
 import {users} from './robots';
- import moment from 'moment';
+import {user} from './user';
+import moment from 'moment';
 import {Info} from './pay';
 
 class Search extends Component{
@@ -64,7 +65,7 @@ onPayment=(x)=>{
   	 <div className='tc'>
   	  
       <Searchbox searchchange1={this.onSearchchange1} searchchange2={this.onSearchchange2} searchchange3={this.onSearchchange3}/>
-      <Cardlist robots={filterrobots} onPayment={this.onPayment} route={this.props.route} payInfo={this.state.payInfo} />
+      <Cardlist robots={filterrobots} onPayment={this.onPayment} route={this.props.route} session={this.props.session} payInfo={this.state.payInfo} />
      
      </div>
   	);
@@ -75,7 +76,7 @@ onPayment=(x)=>{
      
       
       
-      <Cardlist robots={filterrobots} onPayment={this.onPayment} route={this.props.route} payInfo={this.state.payInfo} />
+      <Cardlist robots={filterrobots} user={user} onPayment={this.onPayment} route={this.props.route} session={this.props.session} payInfo={this.state.payInfo} />
      
      </div>
      );

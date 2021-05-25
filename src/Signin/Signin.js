@@ -1,7 +1,9 @@
 import React from 'react';
 import './Signin.css';
 
-const Singnin=({onRouteChange})=>{
+const Singnin=({onRouteChange , onSessionChange,onStateChange})=>{
+
+
 return(
   <article className="br3 ba  b--black-10 mv4 w-100 w-50-m w-25-l mw6 shadow-5 center">
   <div className="pa4 black-80">
@@ -20,8 +22,8 @@ return(
     </fieldset>
     <div className="">
       <input 
+            onClick={()=>onStateChange('home','normal')}
 
-            onClick={()=>onRouteChange('home')}
             className="white sat b ph3 pv2 input-reset ba b--white bg-transparent grow pointer f6 dib" 
             type="submit" 
             value="Sign in"
@@ -30,6 +32,11 @@ return(
     <div className="lh-copy mt3">
       <p onClick={()=>onRouteChange('registrer')} 
       className="tc f6 link dim white db pointer">Register</p>
+    
+    </div>
+    <div className="lh-copy mt3">
+      <p onClick={()=>onStateChange('home','admin')}
+      className="tc f6 link dim white db pointer">Sign in as Admin</p>
     
     </div>
   </form>

@@ -1,7 +1,7 @@
 import React from 'react';
 import './card.css';
 import line from './line.png';
-const Card =({name,email,id,number,depart,arrive,prix,date,hd,ha,onPayment,bagage,nbrplacedispo,typevehicule,confortvoiture})=>{
+const Card =({name,email,id,number,depart,arrive,prix,date,hd,ha,onPayment,bagage,nbrplacedispo,typevehicule,confortvoiture,rating})=>{
 	
   return (
    <div className='pa2 center bg-light-green br3 ma2 grow  shadow-5' style={{width:'65%', height:'310px'}}> 
@@ -10,8 +10,9 @@ const Card =({name,email,id,number,depart,arrive,prix,date,hd,ha,onPayment,bagag
         <img alt='robots' src={`https://robohash.org/${id}?2000*200`} className='img_user' height="100px" width="100px"/>
       </div>
       <div style={{width:'40%', height:'100%',marginLeft:'0%'}} className='pv2'>
-        <p className='f3 b black flex justify-start'>{name}</p><br/>
+        <p className='f3 b black flex justify-start'>{name}</p> <p className='ml6 underline'> {rating}/5</p>
         <p className='f3 b black flex justify-start'>+212 {number}</p>
+        
       </div>
       <div style={{width:'45%', height:'100%',display:'flex',justifyContent:'flex-end',marginTop:'-1%'}} className='pv2'>
         <p className='f3 b black'>{date}</p>

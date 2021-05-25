@@ -2,7 +2,8 @@ import React from 'react';
 import Card from './Card';
 import Save from './saves';
 import Mine from './mines';
-const Cardlist=({robots,onPayment,route,payInfo})=>{
+import Admin from './admin';
+const Cardlist=({robots,onPayment,route,payInfo,session,user})=>{
 
 	const Cardcomponent1=robots.map((user,i)=>{
 		return <Card key={i} 
@@ -17,6 +18,7 @@ const Cardlist=({robots,onPayment,route,payInfo})=>{
 		confortvoiture={robots[i].confort_voiture}
 		arrive={robots[i].arrive}
 		prix={robots[i].prix}
+		rating={robots[i].rating}
 		date={robots[i].date}
 		hd={robots[i].heureDepart}
 		ha={robots[i].heureArrivee}
@@ -28,6 +30,7 @@ const Cardlist=({robots,onPayment,route,payInfo})=>{
 		name={robots[i].name} 
 		email={robots[i].email}
 		number={robots[i].number}
+		rating={robots[i].rating}
 		bagage={robots[i].bagage}
 		depart={robots[i].depart}
 		typevehicule={robots[i].type_vehicule}
@@ -46,6 +49,7 @@ const Cardlist=({robots,onPayment,route,payInfo})=>{
 		name={robots[i].name} 
 		email={robots[i].email}
 		number={robots[i].number}
+		
 		bagage={robots[i].bagage}
 		depart={robots[i].depart}
 		typevehicule={robots[i].type_vehicule}
@@ -83,8 +87,21 @@ const Cardlist=({robots,onPayment,route,payInfo})=>{
 	)
 
 
+	const admin=robots.map((user,i)=>{
+		return <Admin key={i} 
+		id={robots[i].id} 
+		name={robots[i].name} 
+		email={robots[i].email}
+		number={robots[i].number}
+		typevehicule={robots[i].type_vehicule}
+		confortvoiture={robots[i].confort_voiture}
+		rating={robots[i].rating}
+		onPayment={onPayment}/>
+	})
 
-if(route==='home')
+
+
+if(route==='home' && (session==='normal' || session==='admin'))
 {
 	return (
 
@@ -93,24 +110,31 @@ if(route==='home')
 			{Cardcomponent1}
 		</div>);
 }
-else if(route==='payee'){
+else if(route==='payee' && (session==='normal' || session==='admin')){
 	return(
 		<div>
   			{Cardcomponent3}
 		</div>
 );
 }
-else if(route==='save'){
+else if(route==='save' && (session==='normal' || session==='admin')){
 	return(
 		<div>
   			{Cardcomponent3}
 		</div>
 );
 }
-else if(route==='mine'){
+else if(route==='mine' && (session==='normal' || session==='admin')){
 	return(
 		<div>
   			{Cardcomponent4}
+		</div>
+);
+}
+else if(route==='ladmin' && (session==='admin' )){
+	return(
+		<div>
+  			{admin}
 		</div>
 );
 }
