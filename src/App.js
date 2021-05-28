@@ -26,9 +26,33 @@ constructor(){
   this.state={
     input:'',
     route:'homep',
-    isSignedIn:false
+    isSignedIn:false,
+    session:'a',
+    user:{
+     id:'',
+     name:'',
+     lastName:'',
+     number:'',
+     email:'',
+     ville:'',
+     sexe:'',
+     joined:''
+   }
     
   }
+}
+
+loadUser=(data)=>{
+  this.setState({user:{
+     id:data.id,
+     name:data.name,
+     lastName:data.lastname,
+     number:data.number,
+     email:data.email,
+     ville:data.ville,
+     sexe:data.sexe,
+     joined:data.joined
+  }})
 }
 
 onRouteChange=(route) =>{
@@ -40,10 +64,20 @@ onRouteChange=(route) =>{
   this.setState({route:route})
 }
 
+onStateChange=(route,session) =>{
+  if(route==="signin" || route==="registrer"){
+    this.setState({isSignedIn:false})
+  } else {
+    this.setState({isSignedIn:true})
+  }
+  this.setState({session:session});
+  this.setState({route:route})
+}
+
   render(){
   return (
     <div>
-   { this.state.route==='homep'
+   { this.state.route==='homep'  && ( this.state.session==='normal' || this.state.session==='admin' || this.state.session==='a' )
     ? 
     <div>
     <Space/>
@@ -52,29 +86,31 @@ onRouteChange=(route) =>{
     :
     <div>
     <Particle/>
-     <Navigation isSignedIn={this.state.isSignedIn} onRouteChange={this.onRouteChange}/>
+     <Navigation isSignedIn={this.state.isSignedIn} onRouteChange={this.onRouteChange} session={this.state.session}/>
     <Logo/>
-    { this.state.route==='signin'
-      ? <Signin onRouteChange={this.onRouteChange}/>
-      : (this.state.route==='home' || this.state.route==='payee' || this.state.route==='mine' || this.state.route==='save' 
-         ?<Search route={this.state.route} />
-         :(this.state.route==='map'
+    { this.state.route==='signin' && ( this.state.session==='normal' || this.state.session==='admin' ||this.state.session==='a')
+      ? <Signin loadUser={this.loadUser} onRouteChange={this.onRouteChange} onSessionChange={this.onSessionChange} onStateChange={this.onStateChange}/>
+      : ((this.state.route==='home' || this.state.route==='payee' || this.state.route==='mine' || this.state.route==='save') && ( this.state.session==='normal' || this.state.session==='admin'  ) 
+         ?<Search id={this.state.user.id} route={this.state.route} session={this.state.session} />
+         :(this.state.route==='map' && ( this.state.session==='normal' || this.state.session==='admin')
          ?<LocationSearchModal/>
-         :(this.state.route==='registrer'
-         ?<Register onRouteChange={this.onRouteChange}/>
-         :(this.state.route==='creecov'
-          ?<Creecov onRouteChange={this.onRouteChange} />
-         :(this.state.route==='demandercov'
+         :(this.state.route==='registrer' 
+         ?<Register loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
+         :(this.state.route==='creecov' && ( this.state.session==='normal' || this.state.session==='admin')
+          ?<Creecov userId={this.state.user.id} onRouteChange={this.onRouteChange} />
+         :(this.state.route==='demandercov'  && ( this.state.session==='normal' || this.state.session==='admin')
           ?<Demandercov/> 
-         :(this.state.route==='chat'
+         :(this.state.route==='chat'  && ( this.state.session==='normal' || this.state.session==='admin')
           ?<Router><Route path="/" exact component={Join} /><Route path="/chat" component={Chat} /></Router>
-         :(this.state.route==='ques'
+         :(this.state.route==='ques'  && ( this.state.session==='normal' || this.state.session==='admin')
           ?<Questions/>
-         :(this.state.route==='about'
+         :(this.state.route==='about' && ( this.state.session==='normal' || this.state.session==='admin')
             ?<About/>
-         :(this.state.route==='profile'
-          ?<Profil/>
-          :<div></div>))))))))
+         :(this.state.route==='profile' && ( this.state.session==='normal')
+          ?<Profil user={this.state.user}/>
+          :(this.state.session==='admin' && this.state.route==='ladmin'
+            ?<Search id={this.state.user.id} route={this.state.route} session={this.state.session}/>
+            :<div></div>)))))))))
 )
     }
 

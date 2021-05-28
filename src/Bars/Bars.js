@@ -99,8 +99,10 @@ closeNav(){
                 <a href='#' onClick={()=>this.props.onRouteChange('chat')}>Mes Messages</a>
                 <a href='#' onClick={()=>this.props.onRouteChange('ques')}>Top Questions</a>
                 <a href='#' onClick={()=>this.props.onRouteChange('about')}>About</a>
+                {this.props.session==='admin' ? <a href='#' onClick={()=>this.props.onRouteChange('ladmin')}>Users List</a> : <></>}
                 <div className="navbar_right">
                     <ul>
+          
                         <li><a href='#' onClick={()=>this.props.onRouteChange('homep')}>Sign Out</a> </li>
                     </ul>
 
