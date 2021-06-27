@@ -90,8 +90,8 @@ onStateChange=(route,session) =>{
     <Logo/>
     { this.state.route==='signin' && ( this.state.session==='normal' || this.state.session==='admin' ||this.state.session==='a')
       ? <Signin loadUser={this.loadUser} onRouteChange={this.onRouteChange} onSessionChange={this.onSessionChange} onStateChange={this.onStateChange}/>
-      : ((this.state.route==='home' || this.state.route==='payee' || this.state.route==='mine' || this.state.route==='save') && ( this.state.session==='normal' || this.state.session==='admin'  ) 
-         ?<Search id={this.state.user.id} route={this.state.route} session={this.state.session} />
+      : (( this.state.route==='home' || this.state.route==='homeav' || this.state.route==='payee' || this.state.route==='mine' || this.state.route==='mineav' || this.state.route==='save' || this.state.route==='saveav' || this.state.route==='trajet' || this.state.route==='mestrajet') && ( this.state.session==='normal' || this.state.session==='admin'  ) 
+         ?<Search onRouteChange={this.onRouteChange}  id={this.state.user.id} route={this.state.route} session={this.state.session} />
          :(this.state.route==='map' && ( this.state.session==='normal' || this.state.session==='admin')
          ?<LocationSearchModal/>
          :(this.state.route==='registrer' 

@@ -18,7 +18,9 @@ const particleOption={
 const Particle=()=>{
 	return(
    
- <Particles className='particles' params={particleOption} />
+  <Particles className='particles' params={particleOption} />
+   
+ 
    
 		)
 

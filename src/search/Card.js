@@ -1,10 +1,38 @@
 import React from 'react';
 import './card.css';
 import line from './line.png';
-const Card =({name,lastname,email,id,number,depart,arrive,prix,date,hd,ha,onPayment,bagage,nbrplacedispo,typevehicule,confortvoiture,rating})=>{
+
+
+class Card extends React.Component{
+
+  
+
+  onSubmitClick=()=>{
+    fetch('http://localhost:3001/saveCovSimple',{
+       method:'post',
+       headers:{'Content-Type':'application/json'},
+       body:JSON.stringify({
+         userId:this.props.myId,
+         covSId:this.props.id
+       })
+    })
+    .then(response=>response.json())
+    .then(user=>{
+      
+     
+          this.props.onRouteChange('save')
+
+           
+    })
+    
+  }
+
+
+render(){
+  const {name,lastname,email,userid,number,depart,arrive,prix,date,hd,ha,onPayment,bagage,nbrplacedispo,typevehicule,confortvoiture,rating,id}=this.props;
 	
   return (
-   <div className='pa2 center bg-light-green br3 ma2 grow  shadow-5' style={{width:'65%', height:'310px'}}> 
+   <div className='pa2 center bg-light-green br3 ma2   shadow-5' style={{width:'65%', height:'310px'}}> 
     <div style={{width:'100%', height:'33.70%'}} className='flex'>
       <div style={{width:'15%', height:'100%'}}>
         <img alt='robots' src={`https://robohash.org/${id}?2000*200`} className='img_user' height="100px" width="100px"/>
@@ -46,14 +74,19 @@ const Card =({name,lastname,email,id,number,depart,arrive,prix,date,hd,ha,onPaym
     </div>
     <div style={{width:'100%', height:'19.10%'}} className=''>
       <div style={{width:'97%',display:'flex',justifyContent:'flex-end'}} className='pv3'>
-        <button className="bt br4 ph3 pv1  ba black  grow pointer ">Enregistrer</button>
+       
+        <button 
+
+          onClick={()=>this.props.onRouteChange('save')}
+       className="bt br4 ph3 pv1  ba black  grow pointer "
+       >Enregistrer</button>
       </div>
     </div>
 
    </div>
 
   	)
-
+}
 
 }
 

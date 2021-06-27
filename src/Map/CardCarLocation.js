@@ -1,10 +1,10 @@
 import React from 'react';
 import {   Marker,InfoWindow } from "react-google-maps";
 import {loc} from './loc';
-import car2 from './car2.png';
-import carb from './carb.png';
-import moto from './moto.png';
-import motob from './motob.png';
+import car2 from './p_car_bleu.png';
+import carb from './p_car_noir.png';
+import moto from './p_moto_bleu.png';
+import motob from './p_moto_noir.png';
 
 const Cardlist1=({handleToggleOpen,isOpen,indexOpen,google,typeV,typeR})=>{
     

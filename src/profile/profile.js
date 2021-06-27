@@ -5,7 +5,7 @@ const Profile=({user})=>{
 	
 
 	return(
-	<div className='pa2 center bg-light-green br3 ma2 grow  shadow-5' style={{width:'65%', height:'380px',marginTop:'-5%'}}> 
+	<div className='pa2 center bg-light-green br3 ma2   shadow-5' style={{width:'65%', height:'380px',marginTop:'-5%'}}> 
 		<div className='flex'>
 		<div className="flex justify-end">
 		<span className='b f2 justify-start pa3'>Mon profil</span>
@@ -35,6 +35,10 @@ const Profile=({user})=>{
 		    	
 	    	</div>
 	    </div>
+	    <div style={{width:'97%',display:'flex',justifyContent:'flex-end'}} className='pv3'>
+	            <button className="bt br4 ph3 pv1  ba black  grow pointer">Supprimer le compte</button>
+	    </div>
+
     </div>
 
 		);
