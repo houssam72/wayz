@@ -87,17 +87,33 @@ closeNav(){
                 </div>
                 <span style={{cursor:'pointer'}} onClick={()=>this.closeNav()} className="white">&#9776;</span>
             </div>
-
+   { (this.props.user.name==='admin' && this.props.user.name==='admin' )
+   ?
             <div id="mySidenav" className="sidenav" style={{width :'330px',marginTop :"60px"}} >
                 <a href='#' className="closebtn" onClick={()=>this.closeNav()}  >&times;</a>
+                <a href='#' onClick={()=>this.props.onRouteChange('compte')}>Les comptes</a>
+                <a href='#' onClick={()=>this.props.onRouteChange('admincov')}>Les covoiturages</a>
+                <a href='#' onClick={()=>this.props.onRouteChange('admintrajet')}>Les trajets</a>
+                
+                {this.props.session==='admin' ? <a href='#' onClick={()=>this.props.onRouteChange('ladmin')}>Users List</a> : <></>}
+                <div className="navbar_right">
+                    <ul>
+          
+                        <li><a href='#' onClick={()=>this.props.onRouteChange('homep')}>Sign Out</a> </li>
+                    </ul>
+
+                </div>
+            </div>
+    :      <div id="mySidenav" className="sidenav" style={{width :'330px',marginTop :"60px"}} >
+                <a href='#' className="closebtn" onClick={()=>this.closeNav()}  >&times;</a>
                 <a href='#' onClick={()=>this.props.onRouteChange('home')}>Home</a>
-                <a href='#' onClick={()=>this.props.onRouteChange('trajet')}>Trajet Demander</a>
+                <a href='#' onClick={()=>this.props.onRouteChange('trajet')}>Trajet Demandés</a>
                 <a href='#' onClick={()=>this.props.onRouteChange('demandercov')}>Demander un trajet</a>
                 <a href='#' onClick={()=>this.props.onRouteChange('creecov')}>Créer un covoiturage</a>
-                <a href='#' onClick={()=>this.props.onRouteChange('map')}>Map</a>
+                <a href='#' onClick={()=>this.props.onRouteChange('map')}>Carte</a>
                 <a href='#' onClick={()=>this.props.onRouteChange('save')}>Mes enregistrements </a>
                 <a href='#' onClick={()=>this.props.onRouteChange('mine')}>Mes covoiturages</a>
-                <a href='#' onClick={()=>this.props.onRouteChange('mestrajet')}>Mes Trajet</a>
+                <a href='#' onClick={()=>this.props.onRouteChange('mestrajet')}>Mes Trajets</a>
                 <a href='#' onClick={()=>this.props.onRouteChange('chat')}>Mes Messages</a>
                 <a href='#' onClick={()=>this.props.onRouteChange('ques')}>Top Questions</a>
                 <a href='#' onClick={()=>this.props.onRouteChange('about')}>About</a>
@@ -109,7 +125,9 @@ closeNav(){
                     </ul>
 
                 </div>
-            </div>
+            </div>   
+
+        }
             </div>
         }
             </div>

@@ -86,11 +86,11 @@ onStateChange=(route,session) =>{
     :
     <div>
     <Particle/>
-     <Navigation isSignedIn={this.state.isSignedIn} onRouteChange={this.onRouteChange} session={this.state.session}/>
+     <Navigation user={this.state.user} isSignedIn={this.state.isSignedIn} onRouteChange={this.onRouteChange} session={this.state.session}/>
     <Logo/>
     { this.state.route==='signin' && ( this.state.session==='normal' || this.state.session==='admin' ||this.state.session==='a')
       ? <Signin loadUser={this.loadUser} onRouteChange={this.onRouteChange} onSessionChange={this.onSessionChange} onStateChange={this.onStateChange}/>
-      : (( this.state.route==='home' || this.state.route==='homeav' || this.state.route==='payee' || this.state.route==='mine' || this.state.route==='mineav' || this.state.route==='save' || this.state.route==='saveav' || this.state.route==='trajet' || this.state.route==='mestrajet') && ( this.state.session==='normal' || this.state.session==='admin'  ) 
+      : (( this.state.route==='home' || this.state.route==='homeav' || this.state.route==='payee' || this.state.route==='mine' || this.state.route==='mineav' || this.state.route==='save' || this.state.route==='saveav' || this.state.route==='trajet' || this.state.route==='mestrajet' || this.state.route==='compte' || this.state.route==='admincov' || this.state.route==='admintrajet') && ( this.state.session==='normal' || this.state.session==='admin'  ) 
          ?<Search onRouteChange={this.onRouteChange}  id={this.state.user.id} route={this.state.route} session={this.state.session} />
          :(this.state.route==='map' && ( this.state.session==='normal' || this.state.session==='admin')
          ?<LocationSearchModal/>
@@ -101,7 +101,7 @@ onStateChange=(route,session) =>{
          :(this.state.route==='demandercov'  && ( this.state.session==='normal' || this.state.session==='admin')
           ?<Demandercov/> 
          :(this.state.route==='chat'  && ( this.state.session==='normal' || this.state.session==='admin')
-          ?<Router><Route path="/" exact component={Join} /><Route path="/chat" component={Chat} /></Router>
+          ?<Router user={this.state.user}><Route path="/" exact component={Join} /><Route path="/chat" component={Chat} /></Router>
          :(this.state.route==='ques'  && ( this.state.session==='normal' || this.state.session==='admin')
           ?<Questions/>
          :(this.state.route==='about' && ( this.state.session==='normal' || this.state.session==='admin')

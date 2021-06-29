@@ -72,7 +72,7 @@ class Register extends React.Component{
 return(
  
   <>
-        <div style={{marginTop:'-4%'}}>
+        <div style={{marginTop:'-8%'}}>
         
           <div className="white center br3 ba  b--black-10 mv4 w-100 w-50-m w-100-l mw6 shadow-5 center sec_form">
           <legend className="tc f1 fw6 ph0 mh0 white center" >Register</legend><br/>

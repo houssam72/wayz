@@ -2,12 +2,12 @@ import React from 'react';
 import Bars from '../Bars/Bars';
 
 
-const Navigation=({onRouteChange,isSignedIn,session})=>{
+const Navigation=({onRouteChange,isSignedIn,session,user})=>{
 
 if(isSignedIn){
 	return(
 	<nav style={{display:'flex',justifyContent:'flex-end'}}>
-    <Bars onRouteChange={onRouteChange } session={session}/>
+    <Bars user={user} onRouteChange={onRouteChange } session={session}/>
      {/*<p  onClick={()=>onRouteChange}
          className='f3 link dim black  pa3 pointer'> Sign Out</p>*/
       }

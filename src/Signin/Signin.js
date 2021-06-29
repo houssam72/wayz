@@ -30,11 +30,16 @@ class Singnin extends React.Component{
     })
     .then(response=>response.json())
     .then(user=>{
-       if(user.id){
+      if(user.name==='admin' && user.lastname==='admin'){
+        this.props.loadUser(user);
+  this.props.onStateChange('compte','normal');
+      }
+     else {  if(user.id){
+      
   this.props.loadUser(user);
   this.props.onStateChange('home','normal');
 
-      }
+      }}
     })
     
   }
@@ -86,12 +91,6 @@ return(
       className="tc f6 link dim white db pointer">Register</p>
     
     </div>
-    <div className="lh-copy mt3">
-      <p onClick={()=>onStateChange('home','admin')}
-      className="tc f6 link dim white db pointer">Sign in as Admin</p>
-    
-    </div>
-
   </div>
   </article>
 

@@ -233,6 +233,32 @@ else if(this.props.route==='mestrajet'){
      </div>
     );
 }
+else if(this.props.route==='compte'){
+  return(
+    <div className='tc'>
+            <Cardlist onRouteChange={this.props.onRouteChange} myId={this.props.id} robots={filterrobots} onPayment={this.onPayment} route={this.props.route} session={this.props.session} payInfo={this.state.payInfo} />
+
+     </div>
+    );
+}
+else if(this.props.route==='admincov'){
+  return(
+    <div className='tc'>
+           <Searchbox searchchange1={this.onSearchchange1} searchchange2={this.onSearchchange2} searchchange3={this.onSearchchange3}/>
+            <Cardlist onRouteChange={this.props.onRouteChange} myId={this.props.id} robots={filterrobots} onPayment={this.onPayment} route={this.props.route} session={this.props.session} payInfo={this.state.payInfo} />
+
+     </div>
+    );
+}
+else if(this.props.route==='admintrajet'){
+  return(
+    <div className='tc'>
+           <Searchbox searchchange1={this.onSearchchange1} searchchange2={this.onSearchchange2} searchchange3={this.onSearchchange3}/>
+           <Cardlist onRouteChange={this.props.onRouteChange} myId={this.props.id} robots={filterrobots} onPayment={this.onPayment} route={this.props.route} session={this.props.session} payInfo={this.state.payInfo} />
+
+     </div>
+    );
+}
 
   }
 }

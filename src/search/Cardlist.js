@@ -7,6 +7,9 @@ import Save1 from './saves1';
 import Mine from './mines';
 import Mine1 from './mines1';
 import MesTrajet from './MesTrajet';
+import Compte from './Compte';
+import Admincov from './Admincov';
+import Admintrajet from './Admintrajet';
 import Admin from './admin';
 const Cardlist=({robots,onPayment,route,payInfo,session,user,myId,onRouteChange})=>{
 
@@ -207,6 +210,65 @@ const Cardcomponent9=robots.map((user,i)=>{
 		onPayment={onPayment}/>
 	})
 
+ const Cardcomponent10=robots.map((user,i)=>{
+		return <Compte key={i} 
+		id={robots[i].userid} 
+		onRouteChange={onRouteChange}
+		name={robots[i].name} 
+		lastname={robots[i].lastname}
+		number={robots[i].number}
+		rating={robots[i].rating}
+		/>
+	})
+
+const Cardcomponent11=robots.map((user,i)=>{
+		return <Admincov key={i} 
+		id={robots[i].userid} 
+		myId={myId}
+		onRouteChange={onRouteChange}
+		name={robots[i].name} 
+		lastname={robots[i].lastname}
+		email={robots[i].email}
+		number={robots[i].number}
+		bagage={robots[i].bagage}
+		depart={robots[i].depart}
+		typevehicule={robots[i].type_vehicule}
+		nbrplacedispo={robots[i].nbr_place_dispo}
+		confortvoiture={robots[i].confort_voiture}
+		arrive={robots[i].arrive}
+		prix={robots[i].prix}
+		rating={robots[i].rating}
+		date={robots[i].date}
+		hd={robots[i].heuredepart}
+		ha={robots[i].heurearrivee}
+		onPayment={onPayment}
+		/>
+	})
+
+const Cardcomponent12=robots.map((user,i)=>{
+		return <Admintrajet key={i} 
+		id={robots[i].userid} 
+		myId={myId}
+		onRouteChange={onRouteChange}
+		name={robots[i].name} 
+		lastname={robots[i].lastname}
+		email={robots[i].email}
+		number={robots[i].number}
+		bagage={robots[i].bagage}
+		depart={robots[i].depart}
+		typevehicule={robots[i].type_vehicule}
+		nbrplacedispo={robots[i].nbr_place_dispo}
+		confortvoiture={robots[i].confort_voiture}
+		arrive={robots[i].arrive}
+		prix={robots[i].prix}
+		rating={robots[i].rating}
+		date={robots[i].date}
+		hd={robots[i].heuredepart}
+		ha={robots[i].heurearrivee}
+		onPayment={onPayment}
+		/>
+	})
+
 	const admin=robots.map((user,i)=>{
 		return <Admin key={i} 
 		id={robots[i].id} 
@@ -285,6 +347,27 @@ else if(route==='mestrajet' && (session==='normal' || session==='admin')){
 	return(
 		<div>
   			{Cardcomponent9}
+		</div>
+);
+}
+else if(route==='compte' && (session==='normal' || session==='admin')){
+	return(
+		<div>
+  			{Cardcomponent10}
+		</div>
+);
+}
+else if(route==='admincov' && (session==='normal' || session==='admin')){
+	return(
+		<div>
+  			{Cardcomponent11}
+		</div>
+);
+}
+else if(route==='admintrajet' && (session==='normal' || session==='admin')){
+	return(
+		<div>
+  			{Cardcomponent12}
 		</div>
 );
 }
