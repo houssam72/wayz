@@ -1,7 +1,6 @@
 import React from 'react';
 import Bars from '../Bars/Bars';
 
-
 const Navigation=({onRouteChange,isSignedIn,session,user})=>{
 
 if(isSignedIn){

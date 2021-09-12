@@ -9,13 +9,17 @@ import Mine1 from './mines1';
 import MesTrajet from './MesTrajet';
 import Compte from './Compte';
 import Admincov from './Admincov';
+import Admincova from './Admincova';
 import Admintrajet from './Admintrajet';
 import Admin from './admin';
+import Chat from '../Chat/Chat';
+import { BrowserRouter as Router, Route } from "react-router-dom";
 const Cardlist=({robots,onPayment,route,payInfo,session,user,myId,onRouteChange})=>{
 
 	const Cardcomponent1=robots.map((user,i)=>{
 		return <Card key={i} 
 		id={robots[i].userid} 
+		idc={robots[i].id}
 		myId={myId}
 		onRouteChange={onRouteChange}
 		name={robots[i].name} 
@@ -40,13 +44,14 @@ const Cardlist=({robots,onPayment,route,payInfo,session,user,myId,onRouteChange}
 	const Cardcomponent5=robots.map((user,i)=>{
 		return <Card1 key={i} 
 		id={robots[i].userid} 
+		idc={robots[i].id}
 		myId={myId}
 		onRouteChange={onRouteChange}
 		name={robots[i].name} 
 		lastname={robots[i].lastname}
 		number={robots[i].number}
 		bagage={robots[i].bagage}
-		position={robots[i].depart}
+		position={robots[i].state}
 		typevehicule={robots[i].type_vehicule}
 		nbrplacedispo={robots[i].nbr_place_dispo}
 		confortvoiture={robots[i].confort_voiture}
@@ -57,8 +62,9 @@ const Cardlist=({robots,onPayment,route,payInfo,session,user,myId,onRouteChange}
 		/>
 	})
 		const Cardcomponent3=robots.map((user,i)=>{
-		return <Save key={i} 
+		return <Router> <Save key={i} 
 		id={robots[i].userid} 
+		user={user}
 		onRouteChange={onRouteChange}
 		myId={myId}
 		name={robots[i].name} 
@@ -78,10 +84,13 @@ const Cardlist=({robots,onPayment,route,payInfo,session,user,myId,onRouteChange}
 		ha={robots[i].heurearrivee}
 		onPayment={onPayment}
 		/>
+		<Route path="/chat" component={Chat} />
+		</Router>
 	})
 		const Cardcomponent7=robots.map((user,i)=>{
-		return <Save1 key={i} 
+		return <Router> <Save1 key={i} 
 		id={robots[i].userid} 
+		user={user}
 		onRouteChange={onRouteChange}
 		myId={myId}
 		name={robots[i].name} 
@@ -89,7 +98,7 @@ const Cardlist=({robots,onPayment,route,payInfo,session,user,myId,onRouteChange}
 		number={robots[i].number}
 		rating={robots[i].rating}
 		bagage={robots[i].bagage}
-		position={robots[i].depart}
+		position={robots[i].state}
 		typevehicule={robots[i].type_vehicule}
 		nbrplacedispo={robots[i].nbr_place_dispo}
 		confortvoiture={robots[i].confort_voiture}
@@ -97,17 +106,20 @@ const Cardlist=({robots,onPayment,route,payInfo,session,user,myId,onRouteChange}
 		date={robots[i].date}
 		onPayment={onPayment}
 		/>
+		<Route path="/chat" component={Chat} />
+		</Router>
 	})
 		const Cardcomponent4=robots.map((user,i)=>{
 		return <Mine key={i} 
 		id={robots[i].userid} 
+		idcov={robots[i].id} 
 		onRouteChange={onRouteChange}
 		myId={myId}
 		name={robots[i].name} 
 		lastname={robots[i].lastname}
 		email={robots[i].email}
 		number={robots[i].number}
-		
+		rating={robots[i].rating}
 		bagage={robots[i].bagage}
 		depart={robots[i].depart}
 		typevehicule={robots[i].type_vehicule}
@@ -123,13 +135,15 @@ const Cardlist=({robots,onPayment,route,payInfo,session,user,myId,onRouteChange}
 		const Cardcomponent6=robots.map((user,i)=>{
 		return <Mine1 key={i} 
 		id={robots[i].userid} 
+		idc={robots[i].id}
 		onRouteChange={onRouteChange}
 		myId={myId}
+		rating={robots[i].rating}
 		name={robots[i].name} 
 		lastname={robots[i].lastname}
 		number={robots[i].number}
 		bagage={robots[i].bagage}
-		position={robots[i].depart}
+		position={robots[i].state}
 		typevehicule={robots[i].type_vehicule}
 		nbrplacedispo={robots[i].nbr_place_dispo}
 		confortvoiture={robots[i].confort_voiture}
@@ -147,6 +161,7 @@ const Cardlist=({robots,onPayment,route,payInfo,session,user,myId,onRouteChange}
 		id={robots[i].userid} 
 		onRouteChange={onRouteChange}
 		myId={myId}
+		rating={robots[i].rating}
 		name={robots[i].name} 
 		lastname={robots[i].lastname}
 		email={robots[i].email}
@@ -165,7 +180,7 @@ const Cardlist=({robots,onPayment,route,payInfo,session,user,myId,onRouteChange}
 	)
 
 	    const Cardcomponent8=robots.map((user,i)=>{
-		return <Trajet key={i} 
+		return  <Trajet key={i} 
 		id={robots[i].userid} 
 		myId={myId}
 		onRouteChange={onRouteChange}
@@ -181,22 +196,25 @@ const Cardlist=({robots,onPayment,route,payInfo,session,user,myId,onRouteChange}
 		arrive={robots[i].arrive}
 		prix={robots[i].prix}
 		rating={robots[i].rating}
+		rating={robots[i].rating}
 		date={robots[i].date}
 		hd={robots[i].heuredepart}
 		ha={robots[i].heurearrivee}
 		onPayment={onPayment}
 		/>
+		
 	})
 const Cardcomponent9=robots.map((user,i)=>{
 		return <MesTrajet key={i} 
 		id={robots[i].userid} 
+		idcov={robots[i].id}
 		onRouteChange={onRouteChange}
 		myId={myId}
 		name={robots[i].name} 
 		lastname={robots[i].lastname}
 		email={robots[i].email}
 		number={robots[i].number}
-		
+		rating={robots[i].rating}
 		bagage={robots[i].bagage}
 		depart={robots[i].depart}
 		typevehicule={robots[i].type_vehicule}
@@ -212,11 +230,16 @@ const Cardcomponent9=robots.map((user,i)=>{
 
  const Cardcomponent10=robots.map((user,i)=>{
 		return <Compte key={i} 
-		id={robots[i].userid} 
+		id={robots[i].id} 
 		onRouteChange={onRouteChange}
 		name={robots[i].name} 
+		rating={robots[i].rating}
 		lastname={robots[i].lastname}
 		number={robots[i].number}
+		ville={robots[i].ville}
+		email={robots[i].email}
+		joined={robots[i].joined}
+		sexe={robots[i].sexe}
 		rating={robots[i].rating}
 		/>
 	})
@@ -224,6 +247,7 @@ const Cardcomponent9=robots.map((user,i)=>{
 const Cardcomponent11=robots.map((user,i)=>{
 		return <Admincov key={i} 
 		id={robots[i].userid} 
+		idcov={robots[i].id}
 		myId={myId}
 		onRouteChange={onRouteChange}
 		name={robots[i].name} 
@@ -232,6 +256,35 @@ const Cardcomponent11=robots.map((user,i)=>{
 		number={robots[i].number}
 		bagage={robots[i].bagage}
 		depart={robots[i].depart}
+		typevehicule={robots[i].type_vehicule}
+		nbrplacedispo={robots[i].nbr_place_dispo}
+		confortvoiture={robots[i].confort_voiture}
+		rating={robots[i].rating}
+		arrive={robots[i].arrive}
+		prix={robots[i].prix}
+		rating={robots[i].rating}
+		date={robots[i].date}
+		hd={robots[i].heuredepart}
+		ha={robots[i].heurearrivee}
+		onPayment={onPayment}
+		/>
+	})
+
+
+
+const Cardcomponent12=robots.map((user,i)=>{
+		return <Admintrajet key={i} 
+		id={robots[i].userid}
+		idcov={robots[i].id} 
+		myId={myId}
+		onRouteChange={onRouteChange}
+		name={robots[i].name} 
+		lastname={robots[i].lastname}
+		email={robots[i].email}
+		number={robots[i].number}
+		bagage={robots[i].bagage}
+		depart={robots[i].depart}
+		rating={robots[i].rating}
 		typevehicule={robots[i].type_vehicule}
 		nbrplacedispo={robots[i].nbr_place_dispo}
 		confortvoiture={robots[i].confort_voiture}
@@ -245,26 +298,25 @@ const Cardcomponent11=robots.map((user,i)=>{
 		/>
 	})
 
-const Cardcomponent12=robots.map((user,i)=>{
-		return <Admintrajet key={i} 
+
+const Cardcomponent13=robots.map((user,i)=>{
+		return <Admincova key={i} 
 		id={robots[i].userid} 
+		idc={robots[i].id}
 		myId={myId}
 		onRouteChange={onRouteChange}
 		name={robots[i].name} 
 		lastname={robots[i].lastname}
-		email={robots[i].email}
 		number={robots[i].number}
+		rating={robots[i].rating}
 		bagage={robots[i].bagage}
-		depart={robots[i].depart}
+		position={robots[i].state}
 		typevehicule={robots[i].type_vehicule}
 		nbrplacedispo={robots[i].nbr_place_dispo}
 		confortvoiture={robots[i].confort_voiture}
-		arrive={robots[i].arrive}
 		prix={robots[i].prix}
 		rating={robots[i].rating}
 		date={robots[i].date}
-		hd={robots[i].heuredepart}
-		ha={robots[i].heurearrivee}
 		onPayment={onPayment}
 		/>
 	})
@@ -371,6 +423,14 @@ else if(route==='admintrajet' && (session==='normal' || session==='admin')){
 		</div>
 );
 }
+else if(route==='admincovav' && (session==='normal' || session==='admin')){
+	return(
+		<div>
+  			{Cardcomponent13}
+		</div>
+);
+}
+
 else if(route==='ladmin' && (session==='admin' )){
 	return(
 		<div>

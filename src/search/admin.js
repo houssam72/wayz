@@ -9,10 +9,10 @@ const admin =({name,email,id,number,onPayment,typevehicule,confortvoiture,rating
    <div className='pa2 center bg-light-green br3 ma2 grow  shadow-5' style={{width:'65%', height:'200px'}}> 
     <div style={{width:'100%', height:'40%'}} className='flex'>
       <div style={{width:'15%', height:'100%'}}>
-        <img alt='robots' src={`https://robohash.org/${id}?2000*200`} className='img_user' height="100px" width="100px"/>
+        <img alt='robots' src={`user${id}.jpg`} className='img_user' height="100px" width="100px"/>
       </div>
       <div style={{width:'30%', height:'100%',marginLeft:'0%'}} className='pv2'>
-        <p className='f3 b black flex justify-start'>{name} </p> <p className='ml6 underline'> {rating}/5</p>
+        <p className='f3 b black flex justify-start'>{name} </p> <p className='ml6 underline'> {rating}/5 <img height="20px" src={'star.png'}/> </p>
         <p className='f3 b black flex justify-start'>+212 {number}</p>
       
       </div>

@@ -36,6 +36,7 @@ constructor(){
      email:'',
      ville:'',
      sexe:'',
+     rating:'',
      joined:''
    }
     
@@ -51,6 +52,7 @@ loadUser=(data)=>{
      email:data.email,
      ville:data.ville,
      sexe:data.sexe,
+     rating:data.rating,
      joined:data.joined
   }})
 }
@@ -74,6 +76,8 @@ onStateChange=(route,session) =>{
   this.setState({route:route})
 }
 
+
+
   render(){
   return (
     <div>
@@ -90,8 +94,8 @@ onStateChange=(route,session) =>{
     <Logo/>
     { this.state.route==='signin' && ( this.state.session==='normal' || this.state.session==='admin' ||this.state.session==='a')
       ? <Signin loadUser={this.loadUser} onRouteChange={this.onRouteChange} onSessionChange={this.onSessionChange} onStateChange={this.onStateChange}/>
-      : (( this.state.route==='home' || this.state.route==='homeav' || this.state.route==='payee' || this.state.route==='mine' || this.state.route==='mineav' || this.state.route==='save' || this.state.route==='saveav' || this.state.route==='trajet' || this.state.route==='mestrajet' || this.state.route==='compte' || this.state.route==='admincov' || this.state.route==='admintrajet') && ( this.state.session==='normal' || this.state.session==='admin'  ) 
-         ?<Search onRouteChange={this.onRouteChange}  id={this.state.user.id} route={this.state.route} session={this.state.session} />
+      : (( this.state.route==='home' || this.state.route==='homeav' || this.state.route==='payee' || this.state.route==='mine' || this.state.route==='mineav' || this.state.route==='save' || this.state.route==='saveav' || this.state.route==='trajet' || this.state.route==='mestrajet' || this.state.route==='compte'  || this.state.route==='admincov' || this.state.route==='admincovav' || this.state.route==='admintrajet') && ( this.state.session==='normal' || this.state.session==='admin'  ) 
+         ?<Search  user={this.state.user} onRouteChange={this.onRouteChange}  id={this.state.user.id} route={this.state.route} session={this.state.session} />
          :(this.state.route==='map' && ( this.state.session==='normal' || this.state.session==='admin')
          ?<LocationSearchModal/>
          :(this.state.route==='registrer' 
@@ -99,15 +103,15 @@ onStateChange=(route,session) =>{
          :(this.state.route==='creecov' && ( this.state.session==='normal' || this.state.session==='admin')
           ?<Creecov userId={this.state.user.id} onRouteChange={this.onRouteChange} />
          :(this.state.route==='demandercov'  && ( this.state.session==='normal' || this.state.session==='admin')
-          ?<Demandercov/> 
+          ?<Demandercov userId={this.state.user.id} onRouteChange={this.onRouteChange}/> 
          :(this.state.route==='chat'  && ( this.state.session==='normal' || this.state.session==='admin')
-          ?<Router user={this.state.user}><Route path="/" exact component={Join} /><Route path="/chat" component={Chat} /></Router>
+          ?<Router><Route path="/" exact component={Join} /><Route path="/chat" component={Chat} /></Router>
          :(this.state.route==='ques'  && ( this.state.session==='normal' || this.state.session==='admin')
           ?<Questions/>
          :(this.state.route==='about' && ( this.state.session==='normal' || this.state.session==='admin')
             ?<About/>
          :(this.state.route==='profile' && ( this.state.session==='normal')
-          ?<Profil user={this.state.user}/>
+          ?<Profil user={this.state.user} onRouteChange={this.onRouteChange}/>
           :(this.state.session==='admin' && this.state.route==='ladmin'
             ?<Search id={this.state.user.id} route={this.state.route} session={this.state.session}/>
             :<div></div>)))))))))

@@ -2,6 +2,7 @@ import React , { Component }from 'react';
 import './Bars.css';
 import img from './2121.jpg';
 import newLogo from './212.png';
+import { Link } from "react-router-dom";
 
 
   /*function openNav() {
@@ -43,8 +44,8 @@ closeNav(){
                     <ul  className="menu">
                     {
                       (this.props.route==='profile' 
-                        ? <> <li className="li_img"><a href='#' onClick={()=>this.props.onRouteChange('home')} style={{}} className="apdp"><img src={img} alt="PDP" width="100%" className="img_pers" /></a></li></> 
-                        :  <li className="li_img"><a href='#' onClick={()=>this.props.onRouteChange('profile')} style={{}} className="apdp"><img src={img} alt="PDP" width="100%" className="img_pers" /></a></li> )
+                        ? <> <li className="li_img"><a href='#' onClick={()=>this.props.onRouteChange('home')} style={{}} className="apdp"><img src={`user${this.props.user.id}.jpg`} alt="PDP" width="100%" className="img_pers" /></a></li></> 
+                        :  <li className="li_img"><a href='#' onClick={()=>this.props.onRouteChange('profile')} style={{}} className="apdp"><img src={`user${this.props.user.id}.jpg`} alt="PDP" width="100%" className="img_pers" /></a></li> )
                     }
                         <li>
                             <div className="dropdown">
@@ -70,7 +71,7 @@ closeNav(){
                 <div className="navbar_left">
                     
                     <ul  className="menu">
-                          <li className="li_img"><img src={img} alt="PDP" width="100%" className="img_pers" /></li>
+                          <li className="li_img"><img src={`user${this.props.user.id}.jpg`} alt="PDP" width="100%" className="img_pers" /></li>
                         <li>
                             <div className="dropdown">
                               <button className="dropbtn white"> ▾ </button>
@@ -94,11 +95,11 @@ closeNav(){
                 <a href='#' onClick={()=>this.props.onRouteChange('compte')}>Les comptes</a>
                 <a href='#' onClick={()=>this.props.onRouteChange('admincov')}>Les covoiturages</a>
                 <a href='#' onClick={()=>this.props.onRouteChange('admintrajet')}>Les trajets</a>
-                
+                <a href='#' onClick={()=>this.props.onRouteChange('map')}>Carte</a>
                 {this.props.session==='admin' ? <a href='#' onClick={()=>this.props.onRouteChange('ladmin')}>Users List</a> : <></>}
                 <div className="navbar_right">
                     <ul>
-          
+                 
                         <li><a href='#' onClick={()=>this.props.onRouteChange('homep')}>Sign Out</a> </li>
                     </ul>
 
@@ -114,7 +115,7 @@ closeNav(){
                 <a href='#' onClick={()=>this.props.onRouteChange('save')}>Mes enregistrements </a>
                 <a href='#' onClick={()=>this.props.onRouteChange('mine')}>Mes covoiturages</a>
                 <a href='#' onClick={()=>this.props.onRouteChange('mestrajet')}>Mes Trajets</a>
-                <a href='#' onClick={()=>this.props.onRouteChange('chat')}>Mes Messages</a>
+                <a href='#' onClick={()=>this.props.onRouteChange('chat')}>Mes Messages</a>                
                 <a href='#' onClick={()=>this.props.onRouteChange('ques')}>Top Questions</a>
                 <a href='#' onClick={()=>this.props.onRouteChange('about')}>About</a>
                 {this.props.session==='admin' ? <a href='#' onClick={()=>this.props.onRouteChange('ladmin')}>Users List</a> : <></>}

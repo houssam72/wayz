@@ -7,20 +7,20 @@ class Card1 extends React.Component{
 
   
 
-  onSubmitClick=()=>{
-    fetch('http://localhost:3001/saveCovSimple',{
+onSubmitClick=()=>{
+    fetch('http://localhost:3001/saveCovAvance',{
        method:'post',
        headers:{'Content-Type':'application/json'},
        body:JSON.stringify({
          userId:this.props.myId,
-         covSId:this.props.id
+         covAId:this.props.idc
        })
     })
     .then(response=>response.json())
     .then(user=>{
       
      
-          this.props.onRouteChange('save')
+          this.props.onRouteChange('map')
 
            
     })
@@ -35,10 +35,10 @@ render(){
    <div className='pa2 center bg-light-green br3 ma2   shadow-5' style={{width:'65%', height:'310px'}}> 
     <div style={{width:'100%', height:'33.70%'}} className='flex'>
       <div style={{width:'15%', height:'100%'}}>
-        <img alt='robots' src={`https://robohash.org/${id}?2000*200`} className='img_user' height="100px" width="100px"/>
+        <img alt='robots' src={`user${id}.jpg`} className='img_user' height="100px" width="100px"/>
       </div>
       <div style={{width:'40%', height:'100%',marginLeft:'0%'}} className='pv2'>
-        <p className='f3 b black flex justify-start'>{name} {lastname}</p>  <p className='ml6 underline'>   3.5/5</p>
+        <p className='f3 b black flex justify-start'>{name} {lastname}</p>  <p className='ml6 underline'>   {rating}/5 <img height="20px" src={'star.png'}/> </p>
         <p className='f3 b black flex justify-start'>+212 {number}</p>
         
       </div>
@@ -71,7 +71,7 @@ render(){
       <div style={{width:'97%',display:'flex',justifyContent:'flex-end'}} className='pv3'>
         <button 
 
-          onClick={()=>this.props.onRouteChange('save')}
+          onClick={()=>this.onSubmitClick()}
        className="bt br4 ph3 pv1  ba black  grow pointer "
        >Enregistrer</button>
       </div>

@@ -15,6 +15,7 @@ class LocationSearchModal extends React.Component {
   
 
     state = {
+       loc:[], 
        typeV:'',
        typeR:'',
        isOpen: false,
@@ -77,6 +78,17 @@ class LocationSearchModal extends React.Component {
         } else {
             console.error("Geolocation is not supported by this browser!");
         }
+
+
+        fetch('http://localhost:3001/map',{
+       method:'get'
+       
+    })
+    .then(response=>response.json())    
+    .then(users=>{
+      this.setState({loc:users})
+      
+    })
     };
 
     // shouldComponentUpdate(nextProps, nextState, nextContext) {
@@ -286,7 +298,7 @@ class LocationSearchModal extends React.Component {
       
                          
                         <Cardlist1 handleToggleOpen={this.handleToggleOpen} isOpen={this.state.isOpen} indexOpen={this.state.indexOpen} google={this.props.google} 
-                                   typeV={this.state.typeV}  typeR={this.state.typeR} />
+                                   typeV={this.state.typeV}  typeR={this.state.typeR} loc={this.state.loc} />
                        
 
                         {/* <MarkerWithLabel
@@ -324,12 +336,12 @@ class LocationSearchModal extends React.Component {
                         <div style={{ height: `100%` }} />
                     }
                 /> 
-                <Descriptions bordered>
-                    <Descriptions.Item label="City">{this.state.city}</Descriptions.Item>
+               { /*<Descriptions bordered className="center">
+                   <Descriptions.Item label="City">{this.state.city}</Descriptions.Item>
                     <Descriptions.Item label="Area">{this.state.area}</Descriptions.Item>
                     <Descriptions.Item label="State">{this.state.state}</Descriptions.Item>
                     <Descriptions.Item label="Address">{this.state.address}</Descriptions.Item>
-                </Descriptions>
+                </Descriptions>*/}
             </div>
         )
     }
